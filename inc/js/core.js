@@ -105,7 +105,7 @@ jQuery(document).ready(function( $ ) {
         $('.hamburger').toggleClass('is-active');
         $(".nav-menu").toggleClass("menu-open");
         $("html").toggleClass("prevent-scroll");
-        $(".menu-text").toggleClass("menu-open");
+        $(".menu-text").toggleClass("menu-open"); 
         $(".close-text").toggleClass("menu-open");
         
     });
