@@ -37,7 +37,7 @@ jQuery(document).ready(function( $ ) {
         } else {
             $("body").removeClass("scrolled");
         }
-    });
+    }); 
  
 //Smooth Scroll
 
@@ -104,6 +104,10 @@ jQuery(document).ready(function( $ ) {
     $('.menu-trigger').click(function() {
         $('.hamburger').toggleClass('is-active');
         $(".nav-menu").toggleClass("menu-open");
+        $("html").toggleClass("prevent-scroll");
+        $(".menu-text").toggleClass("menu-open");
+        $(".close-text").toggleClass("menu-open");
+        
     });
 
     $('.multi-panel__trigger').click(function() {

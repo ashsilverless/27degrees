@@ -275,3 +275,39 @@ function silverless_social_sharing_buttons($content) {
 	}
 };
 //add_filter( 'the_content', 'silverless_social_sharing_buttons');
+
+/**= Load Menu =**/
+
+add_filter('wp_nav_menu_items', 'my_wp_nav_menu_items', 10, 2);
+
+function my_wp_nav_menu_items($items,$args) {
+	
+	$menu = wp_get_nav_menu_object($args->menu);
+	
+	if($args->theme_location=='main-menu') {
+		$logo     = get_field('logo_company', $menu);
+		$title    = get_field('title_company', $menu);
+		$subtitle = get_field('subtitle_company', $menu);
+		
+		$html_logo = '<li class="menu-item-logo pb5"><a href="'.home_url().'"><img src="'.$logo['url'].'" alt="'.$logo['alt'].'" /></a></li>';
+		
+		$social_icons = '<li class="menu-item-social-items pt5">';
+
+		
+		if(have_rows('social_links', 'option')) {
+			while(have_rows('social_links', 'option')) {
+				the_row();
+				$row = get_row();
+				
+				$social_icon = "<a href='".get_sub_field('page_link')."'><i class='fab fa-".get_sub_field('name')."'></i></a>";
+				
+				$social_icons .= $social_icon;
+			}
+		}
+		$social_icons .= "</li>";
+		
+		$items = $html_logo . $items . $social_icons;
+	}
+	
+	return $items;
+}
