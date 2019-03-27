@@ -51,6 +51,10 @@ img {
     height: auto;
 }
 
+.prevent-scroll {
+	overflow: hidden;
+}
+
 .heading {
     font-weight: 800;
     text-transform: uppercase;
@@ -106,27 +110,43 @@ header {
 nav {
     position: fixed;
     top:0;
-    width: 100%;
+    right: 0;
+    height: 100%;
+    background: hsla(0, 0%, 100%, 1);
     padding-bottom: 1em;
     font-family: $supporting-font;
     z-index: 500;  
     color: white;
     transition: background 0.5s ease;
 
-    &:before {
-        content: '';
+    &:before, &:after {
         position: absolute;
-        width: 100%;
-        height: 50px;
-        background: hsl(311, 13%, 14%);
-        opacity:0;
-        transition:opacity 0.3s ease;
-    }  
+        right: 0;
+		display: block;
+		content: '';
+    	width: 4.2rem;
+    	height: 40px;
+    	background-color: #ffffff;
+    	opacity: 1;
+    	z-index: 500;
+    	-webkit-transition: opacity 0.3s ease;
+		-o-transition: opacity 0.3s ease;
+    }
+    
+    &:after {
+	    bottom: -40px;
+    }
+    
+    &:before {
+	    top: -40px;
+    }
     
     .menu-trigger {
+	    cursor: pointer;
         position: relative;
         margin-top:1em;  
         z-index: 1000;
+        text-align: center;
     }
     
     .brand {
@@ -169,7 +189,7 @@ nav {
 .scrolled nav {
     background:$brand-primary;
     
-    .brand a {
+    .brand a { 
         height: 2em;
     }
 }
@@ -177,17 +197,17 @@ nav {
 .nav-menu {
     position: absolute;
     top:0;
-    left: -100%;
-    width: 100%;
+    right: -100vw;
+    width: calc(100vw - 70px);
     height: 100vh;
     overflow: hidden;
-    background: $brand-primary;
+    background: $brand-menu;
     /*opacity:0;*/
-    z-index: 500;
-    transition: left 0.5s ease, opacity 0.7s ease;
+    z-index: 499;
+    transition: right 0.5s ease, opacity 0.7s ease;
     
     &.menu-open {
-        left:0;
+        right:70px;
         opacity:1;
     }
     
@@ -202,8 +222,10 @@ nav {
         padding: 0;
         
         li {
-            margin-bottom: 1em;
-            text-align: center;
+            letter-spacing: 0.3rem;
+		    margin-bottom: 2.5rem;
+		    text-align: center;
+		    font-size: 0.6rem;
             
             a {
                 color: white;
@@ -218,6 +240,10 @@ nav {
                     padding: 0 .5em;                 
                 }
             }
+            
+            img {
+	            max-width: 30vw;
+            }
         }
     }
 
@@ -225,6 +251,66 @@ nav {
         padding: 0.25em 1em;
         background: $brand-secondary;
     }
+}
+
+.nav-menu-content {
+	width: 4.2rem;
+	position: fixed;
+    top:0;
+    right: 0;
+    height: 100%;
+    background: hsl(0, 0%, 100%);
+    padding-bottom: 1em;
+    font-family: $supporting-font;
+    z-index: 500;  
+    color: white;
+    transition: background 0.5s ease;
+}
+
+.close-text {
+	position: absolute;
+	right: 100%;
+	text-transform: uppercase;
+	color: #000000;
+	font-family: sans-serif;
+	font-size: 0.8rem;
+    letter-spacing: 0.4rem;
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease, color 0.5s ease;
+    transform: translateX(30%);
+    
+    &.menu-open {
+	    transform: translateX(0);
+        opacity: 1;
+        color: #FFFFFF;
+    }
+
+}
+
+.menu-text {
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+	text-transform: uppercase;
+	color: #000000;
+	font-family: sans-serif;
+	font-size: 0.8rem;
+    letter-spacing: 0.4rem;
+    opacity: 1;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    
+    &.menu-open {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+}
+
+.menu-circle {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-color: #FFFFFF;
+	border-radius: 100px;
+	border: 3px solid #000000;
 }
 
 /*===========FOOTER==========*/

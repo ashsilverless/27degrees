@@ -34,8 +34,8 @@
     	<div id="page" class="site-wrapper">
     
     		<nav id="nav">
-                
-                <div class="nav-menu">
+	    		
+	    		<div class="nav-menu">
                 
                 <?php
                 wp_nav_menu( array(
@@ -43,14 +43,15 @@
                 'container_class' => 'mainMenu' ) );
                 ?>
                 
-                </div>
+				</div>
     				
-    			<div class="container">
+    			<div class="nav-menu-content container">
     
-    				<div class="row">
+    				<div class="col">
     
-    					<div class="col-3">
+    					<div class="row-1">
     
+<!--
     						<div class="menu-trigger hamburger hamburger--collapse">
     							
     							<div class="hamburger-box">
@@ -60,26 +61,14 @@
     							</div>
     							
     						</div>
+-->
+							<div class="menu-trigger">
+								<div class="close-text pr4">Close</div>
+								<div class="menu-circle mb2"></div>
+								<div class="menu-text">Menu</div>
+							</div>
     
     					</div>
-    
-    					<div class="col-6 brand">
-        					
-        				    <?php $brandImage = get_field('logo', 'options');?>	
-        				
-    						<a href="<?php echo home_url(); ?>" alt="<?php wp_title(''); ?>" title="<?php wp_title(''); ?>">
-        						
-        						<img src="<?php echo $brandImage['url'];?>" alt="" title=""/>
-        						
-    						</a>
-    						
-    					</div>                    
-    
-                        <div class="col-3 cta">
-                            
-                            <a href="http://photo-journey.local/#tickets">Book Now</a>
-                        
-                        </div>
     
     				</div>
     
