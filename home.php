@@ -1,6 +1,6 @@
 <?php
 /**
- * ============== Template Name: Home
+ * Template Name: Countries
  *
  * @package Silverless
  */
@@ -50,7 +50,7 @@ get_header();?>
 
     <div class="row">
 
-        <div class="col-5 offset-1">
+        <div class="col-6">
             
             <div class="text-area__one">
            
