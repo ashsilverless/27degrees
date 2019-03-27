@@ -285,7 +285,7 @@ function my_wp_nav_menu_items($items,$args) {
 	$menu = wp_get_nav_menu_object($args->menu);
 	
 	if($args->theme_location=='main-menu') {
-		$logo     = get_field('logo_company', $menu);
+		$logo     = get_field('logo', 'option');
 		$title    = get_field('title_company', $menu);
 		$subtitle = get_field('subtitle_company', $menu);
 		
