@@ -24,8 +24,9 @@ main {
 }
 
 p {
-    font-size: 1.2em;
-    font-weight: 200;  
+    font-size: 1em;
+    line-height: 1.7em;
+    font-weight: 300;  
 }
 
 a {
@@ -56,10 +57,10 @@ img {
 }
 
 .heading {
-    font-weight: 800;
+    font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 0.05em; 
-    color: $brand-secondary;         
+    color: $brand-primary;         
     
     &__light {
         color: white;
@@ -71,21 +72,18 @@ img {
     
     &__xl {
         font-size: 4em;
-        line-height: 0.75em;
     }
     
     &__lg {      
-        font-size: 2em;
+        font-size: 1.8em;
     }  
     
     &__md {
-        font-size: 1.5em;    
-        font-weight: 400;    
+        font-size: 1.3em;    
     }   
     
     &__sm {
-        font-size: 1.2em; 
-        font-weight: 400;       
+        font-size: 1.15em; 
     }
     
     &__xs {

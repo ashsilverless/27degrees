@@ -2,7 +2,7 @@
 
     <div class="expanding-copy__lead">
     
-        <?php the_field( 'text_block_text' );?>
+        <p><?php the_field( 'text_block_text' );?></p>
     
     </div>
     
