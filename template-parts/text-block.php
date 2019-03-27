@@ -2,11 +2,11 @@
 
     <div class="expanding-copy__lead">
     
-        <?php the_sub_field( 'text_block_text' );?>
+        <?php the_field( 'text_block_text' );?>
     
     </div>
     
-    <?php if( get_sub_field('text_block_text_more') ): ?>
+    <?php if( get_field('text_block_text_more') ): ?>
     
         <a class="trigger-expand">Read More</a>    
     
@@ -14,21 +14,21 @@
     
     <div class="expanding-copy__more">
     
-        <?php the_sub_field('text_block_text_more'); ?>          
+        <?php the_field('text_block_text_more'); ?>          
     
     </div>    
     
-    <?php if( get_sub_field('text_block_text_more') ): ?>
+    <?php if( get_field('text_block_text_more') ): ?>
     
         <a class="trigger-collapse hide">Read Less</a>    
     
     <?php endif; ?>
 
-    <?php if( get_sub_field('button_query') == 'true' ): ?>
+    <?php if( get_field('button_query') == 'true' ): ?>
 
-        <a href="<?php the_sub_field( 'button_target' );?>" type="button" class="button">
+        <a href="<?php the_field( 'button_target' );?>" type="button" class="button">
             
-            <?php the_sub_field( 'button_text' );?>
+            <?php the_field( 'button_text' );?>
         
         </a>
 

@@ -197,8 +197,8 @@ a.next-section {
 }
 
 .logo-holder {
+    display: inline-block;
     text-align: center;
-    margin-top: -10px;
  
     #logo {
         width:80px;
@@ -214,6 +214,10 @@ a.next-section {
         }
     }
 
+    svg {
+        vertical-align: bottom;
+    }
+    
     #created {
         opacity:0;
         transform: translateY(50px);

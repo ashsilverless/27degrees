@@ -135,6 +135,12 @@
     }
 }
 
+.call-to-action {
+    display: grid;
+    min-height: 20em;
+    align-content: center;
+}
+
 .carousel {
     
     &__item {

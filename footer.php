@@ -14,20 +14,6 @@
     
             <div class="socket">
     
-                <div class="partner-logos">
-                    
-                    <h4 class="heading heading__md heading__alt-color mb1">Proudly Partnered With</h4>
-                    
-                        <?php 
-                    if( have_rows('partner_logos', 'options') ): 
-                    while ( have_rows('partner_logos', 'options') ) : the_row(); ?>        
-                    
-                    <img src="<?php the_sub_field('image');?>"/>    
-                    
-                    <?php endwhile; endif;?>
-                    
-                </div>
-    
                 <div class="row">
     
                     <div class="col-4 socials">
@@ -40,9 +26,28 @@
     
                     </div>
     
-                    <div class="col-4">
-                        
-                        <div class="logo-holder">
+                    <div class="col-4 accreds">
+
+
+                    <?php 
+                    if( have_rows('partner_logos', 'options') ): 
+                    while ( have_rows('partner_logos', 'options') ) : the_row(); ?>        
+                    
+                        <img src="<?php the_sub_field('image');?>"/>    
+                    
+                    <?php endwhile; endif;?>
+
+                    </div>
+    
+                    <div class="col-4 socket__colophon">
+    
+                        &copy; 27 Degrees South <?php echo date ('Y');?>
+    
+                        <a href="">Terms</a>
+    
+                        <a href="">Privacy</a>
+
+  <div class="logo-holder">
                             
                             <a href="https://silverless.co.uk">
                                 
@@ -51,16 +56,6 @@
                             </a>
                         
                         </div>
-    
-                    </div>
-    
-                    <div class="col-4 socket__colophon">
-    
-                        &copy; Silverless <?php echo date ('Y');?>
-    
-                        <a href="">Terms</a>
-    
-                        <a href="">Privacy</a>
     
                     </div>
     
