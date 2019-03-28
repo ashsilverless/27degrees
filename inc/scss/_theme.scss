@@ -2,6 +2,26 @@
 
 /*===========HEADER==========*/
 
+.site-logo {
+    position: fixed;
+    top: 50px;
+    left:50%;
+    margin-left:-200px;
+    z-index: 99;
+    width:400px;
+    opacity:0;
+    transition: opacity 3s ease;
+}
+
+.loaded .site-logo {
+    opacity:1;
+}
+
+.scrolled .site-logo {
+    opacity:0;
+    transition: opacity 0.5s ease;
+}
+
 /*===========BODY==========*/
 
 .leaders {
@@ -25,7 +45,7 @@
 .experience-level {
     position: relative;
     display: block;
-    height :1em;
+    height :10px;
     width:100%;
     background:$brand-secondary;
     border-radius: 50px;
@@ -45,9 +65,9 @@
         content: '';
         position: absolute;
         left:0;
-        top:-0.25em;
-        width:1.5em;
-        height:1.5em;
+        top: -5px;
+        width: 20px;
+        height: 20px;
         background:white;
         border:3px solid $brand-secondary;
         border-radius:50px;
@@ -55,15 +75,15 @@
     }
 
     &.one:before {
-        width:calc(25% + 1.5em);
+        width:calc(25% + 10px);
     }
     
     &.two:before {
-        width:calc(50% + 1.5em);
+        width:calc(50% + 10px);
     }    
     
     &.three:before {
-        width:calc(75% + 1.5em);
+        width:calc(75% + 10px);
     }    
 
     &.one:after {
@@ -80,10 +100,10 @@
     
     span {
         position: absolute;
-        top:0.25em;
+        top: 1px;
         left:25%;
-        width:0.5em;
-        height:0.5em;
+        width:8px;
+        height:8px;
         background: $brand-primary;
         border-radius: 50px;
 
@@ -97,7 +117,12 @@
     }
 }
 
-
+ul.features {
+    
+    li {
+        margin-bottom: 0.5em;
+    }
+}
 
 
 

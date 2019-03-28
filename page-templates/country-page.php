@@ -34,7 +34,7 @@ get_header();?>
 
     <div class="row">
 
-        <div class="col-6">
+        <div class="col-sm-6">
             
             <h2 class="heading heading__md mb1"><?php the_field('text_block_heading');?></h2>
             
@@ -42,7 +42,7 @@ get_header();?>
             
         </div>
 
-        <div class="col-6">
+        <div class="col-sm-6">
         
         </div>
         
@@ -63,7 +63,7 @@ get_header();?>
 
     <div class="row">
 
-        <div class="col-6">
+        <div class="col-sm-6">
 
             <h2 class="heading heading__md mb1"><?php the_field('text_block2_text_block_heading');?></h2>
             
@@ -117,7 +117,7 @@ get_header();?>
         
         </div>
 
-        <div class="col-6">
+        <div class="col-sm-6">
         
         </div>
         
@@ -144,7 +144,7 @@ get_header();?>
 
     <div class="row">
 
-        <div class="col-6">
+        <div class="col-sm-6">
 
             <h2 class="heading heading__md mb1"><?php the_field('text_block3_text_block_heading');?></h2>
             
@@ -198,7 +198,7 @@ get_header();?>
             
         </div>
 
-        <div class="col-6">
+        <div class="col-sm-6">
         
         </div>
         
@@ -224,7 +224,7 @@ get_header();?>
 
     <div class="row">
 
-        <div class="col-6">
+        <div class="col-sm-6">
 
             <h2 class="heading heading__md mb1"><?php the_field('text_block4_text_block_heading');?></h2>
             
@@ -278,7 +278,7 @@ get_header();?>
             
         </div>
 
-        <div class="col-6">
+        <div class="col-sm-6">
         
         </div>
         

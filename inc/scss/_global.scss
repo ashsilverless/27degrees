@@ -14,7 +14,7 @@ body {
 body {
     font-family: $body-font;
     font-size: 1rem;
-    font-weight: 200;
+    font-weight: 400;
     background: hsl(0, 0%, 100%);
     color: hsl(69, 2%, 31%);
 }
@@ -26,7 +26,7 @@ main {
 p {
     font-size: 1em;
     line-height: 1.7em;
-    font-weight: 300;  
+    font-weight: 400;  
 }
 
 a {
@@ -56,8 +56,14 @@ img {
 	overflow: hidden;
 }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
 .heading {
-    font-weight: 300;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.05em; 
     color: $brand-primary;         
@@ -97,6 +103,7 @@ img {
 
 .site-wrapper {
     position: relative;
+    margin-right: 4.2em;
 }
 
 header {
@@ -233,11 +240,6 @@ nav {
                 transition: all 0.5s ease;
                 border-left: 3px solid hsla(0, 0%, 100%, 0);    
                 border-right: 3px solid hsla(0, 0%, 100%, 0);     
-                               
-                &:hover {
-                    border-color: hsl(0, 0%, 100%); 
-                    padding: 0 .5em;                 
-                }
             }
             
             img {
