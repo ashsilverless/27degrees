@@ -203,6 +203,10 @@ a.next-section {
     display: inline-block;
     text-align: center;
  
+    a {
+        border:none;
+    }
+ 
     #logo {
         width:80px;
         height:30px;
@@ -213,12 +217,13 @@ a.next-section {
         transition:opacity 0.5s ease-in-out;
     
         path {
-            fill:$brand-secondary;
+            fill:$brand-primary;
         }
     }
 
     svg {
         vertical-align: bottom;
+        margin-bottom: -4px;
     }
     
     #created {
@@ -227,7 +232,7 @@ a.next-section {
         transition: 1s transform ease, 2s opacity ease;
 
         path {
-            fill:$brand-secondary;
+            fill:$brand-primary;
         }
     }
 

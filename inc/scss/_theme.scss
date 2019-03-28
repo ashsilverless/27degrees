@@ -4,4 +4,119 @@
 
 /*===========BODY==========*/
 
+.leaders {
+    
+    a {
+        display: block;
+    }
+    
+    &__item {
+        min-height: 20em;
+        margin-bottom: 2em;
+        padding:2em;
+    }
+}
+
+.fullwidth-image {
+    @include backgroundCover;
+    min-height: 20em;
+}
+
+.experience-level {
+    position: relative;
+    display: block;
+    height :1em;
+    width:100%;
+    background:$brand-secondary;
+    border-radius: 50px;
+
+    &:before {
+        content:'';
+        position: absolute;
+        left: 0;
+        width:0;
+        height:100%;
+        background: $brand-primary;
+        border-radius: 50px;
+        transition:width 1s ease;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        left:0;
+        top:-0.25em;
+        width:1.5em;
+        height:1.5em;
+        background:white;
+        border:3px solid $brand-secondary;
+        border-radius:50px;
+        transition:left 1s ease;
+    }
+
+    &.one:before {
+        width:calc(25% + 1.5em);
+    }
+    
+    &.two:before {
+        width:calc(50% + 1.5em);
+    }    
+    
+    &.three:before {
+        width:calc(75% + 1.5em);
+    }    
+
+    &.one:after {
+        left:calc(25%);
+    }
+    
+    &.two:after {
+        left:calc(50%);
+    }    
+    
+    &.three:after {
+        left:calc(75%);
+    }  
+    
+    span {
+        position: absolute;
+        top:0.25em;
+        left:25%;
+        width:0.5em;
+        height:0.5em;
+        background: $brand-primary;
+        border-radius: 50px;
+
+        &:nth-of-type(2) {
+            left:50%;
+        } 
+        
+        &:nth-of-type(3) {
+            left:75%;
+        }                          
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*===========FOOTER==========*/

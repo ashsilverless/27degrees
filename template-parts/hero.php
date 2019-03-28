@@ -10,7 +10,7 @@
     if( get_field('hero_type') !== 'slider'):
 ?>
 
-    <div class="hero mb3 <?php the_field( 'hero_height' );?>" style="background-image: url(<?php echo $heroImage['url']; ?>); background-color: <?php echo $heroColor; ?>;">
+    <div class="hero <?php the_field( 'hero_height' );?>" style="background-image: url(<?php echo $heroImage['url']; ?>); background-color: <?php echo $heroColor; ?>;">
 
     <?php 
         if( get_field('hero_type') == 'video'): ?>
@@ -30,7 +30,7 @@
             <div class="hero__content">       
                 
                 <h1 class="heading heading__sm heading__light font800"><?php the_field( 'hero_sub_heading' );?></h1>            
-                <h3 class="heading heading__xl heading__light"><?php the_field( 'hero_heading' );?></h3>
+                <h3 class="heading heading__xl heading__light font800"><?php the_field( 'hero_heading' );?></h3>
                 <h2 class="heading heading__sm heading__light"><?php the_field( 'hero_copy' );?></h2>
 
                 <?php 

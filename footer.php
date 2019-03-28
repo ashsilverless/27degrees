@@ -16,7 +16,7 @@
     
                 <div class="row">
     
-                    <div class="col-4 socials">
+                    <div class="col-2 socials">
     
                         <?php if( have_rows('social_links', 'option') ): while( have_rows('social_links', 'option') ): the_row(); ?>
     
@@ -39,7 +39,7 @@
 
                     </div>
     
-                    <div class="col-4 socket__colophon">
+                    <div class="col-6 socket__colophon">
     
                         &copy; 27 Degrees South <?php echo date ('Y');?>
     
