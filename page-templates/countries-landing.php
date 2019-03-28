@@ -30,7 +30,7 @@ get_header();?>
 
 <!-- ******************* Text Block ******************* -->
 
-<div class="text-block">
+<div class="text-block mt5 mb5">
 
     <div class="row">
 
@@ -56,7 +56,7 @@ get_header();?>
 
 <!-- ******************* Leaders Block ******************* -->
 
-LEADERS
+<?php get_template_part('template-parts/leaders');?>
 
 <!-- ******************* Leaders END ******************* -->
 
