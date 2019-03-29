@@ -60,6 +60,23 @@
     min-height: 20em;
 }
 
+.text-block {
+    position: relative;
+    
+    &__accent {
+        @include backgroundContain;
+        position: absolute;
+        width: 10em;
+        height: 10em;
+        right:-80%;
+        bottom:-25vh;
+        opacity:0.15;
+    }
+}
+
+
+
+
 .experience-level {
     position: relative;
     display: block;

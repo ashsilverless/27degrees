@@ -96,6 +96,10 @@ jQuery(document).ready(function( $ ) {
 	        $(".circle-background").css({
 	            transform: "translate(0px, " + (-1) * distance / 20 + "%)"
 	        });
+
+	        $(".text-block__accent").css({
+	            transform: "translate(0px, " + (1) * distance / 5 + "%)"
+	        });
 	         
 	    });
 	});
