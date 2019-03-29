@@ -43,8 +43,6 @@ get_header();?>
         </div>
 
         <div class="col-6">
-
-        ADDITIONAL CONTENT (Where applicable)
         
         </div>
         
