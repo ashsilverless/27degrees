@@ -92,7 +92,7 @@
         height:100%;
         background: $brand-primary;
         border-radius: 50px;
-        transition:width 1s ease;
+        transition:width 2s ease;
     }
 
     &:after {
@@ -105,30 +105,30 @@
         background:white;
         border:3px solid $brand-secondary;
         border-radius:50px;
-        transition:left 1s ease;
+        transition:left 2s ease;
     }
 
-    &.one:before {
+    &.active.one:before {
         width:calc(25% + 10px);
     }
     
-    &.two:before {
+    &.active.two:before {
         width:calc(50% + 10px);
     }    
     
-    &.three:before {
+    &.active.three:before {
         width:calc(75% + 10px);
     }    
 
-    &.one:after {
+    &.active.one:after {
         left:calc(25%);
     }
     
-    &.two:after {
+    &.active.two:after {
         left:calc(50%);
     }    
     
-    &.three:after {
+    &.active.three:after {
         left:calc(75%);
     }  
     
