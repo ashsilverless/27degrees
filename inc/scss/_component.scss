@@ -156,7 +156,7 @@ a.next-section {
     text-transform: uppercase;
     letter-spacing: 5px;
     color: white;
-    z-index: 50;
+    z-index: 150;
     filter: drop-shadow(2px 2px 2px #000000) drop-shadow(4px 4px 2px #000000);
 
 	&:after, &:before {
@@ -187,11 +187,7 @@ a.next-section {
     position: absolute;
     bottom: 0;
     height: 10em;
-	background: -moz-linear-gradient(top, hsla(0,0%,100%,0) 0%, hsla(0,0%,0%,0.86) 40%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, hsla(0,0%,100%,0) 0%,hsla(0,0%,0%,0.86) 40%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, hsla(0,0%,100%,0) 0%,hsla(0,0%,0%,0.86) 40%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#db000000',GradientType=0 ); /* IE6-9 */
-	z-index: 50;
+    z-index: 150;
 	
 	&.fixed {
 		position: fixed;
@@ -200,6 +196,24 @@ a.next-section {
 	
 	.hidden {
 		display: none;
+	}
+}
+
+.scroll-shadow {
+	width: calc(100vw - #{$width-menu});
+    position: absolute;
+    bottom: 0;
+    height: 10em;
+	z-index: 50;
+	background: -moz-linear-gradient(top, hsla(0,0%,100%,0) 0%, hsla(0,0%,0%,0.86) 40%);
+	background: -webkit-linear-gradient(top, hsla(0,0%,100%,0) 0%,hsla(0,0%,0%,0.86) 40%);
+	background: linear-gradient(to bottom, hsla(0,0%,100%,0) 0%,hsla(0,0%,0%,0.86) 40%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#db000000',GradientType=0 );
+	z-index: 50;
+	
+	&.fixed {
+		position: fixed;
+		bottom: 0;
 	}
 }
 

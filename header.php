@@ -45,21 +45,13 @@
                 
 				</div>
     				
-    			<div class="nav-menu-content container pr0 pl0">
-    
-    				<div class="col pr0 pl0">
-    
-    					<div class="row pr0 pl0">
+    			<div class="nav-menu-content container">
 	    					
-							<div class="menu-trigger">
-								<div class="close-text">Close</div>
-								<div class="menu-circle mb1"></div><br>
-								<div class="menu-text">Menu</div>
-							</div>
-    
-    					</div>
-    
-    				</div>
+					<div class="menu-trigger">
+						<div class="close-text">Close</div>
+						<div class="menu-circle mb1"></div>
+						<div class="menu-text">Menu</div>
+					</div>
     
     			</div>
     
