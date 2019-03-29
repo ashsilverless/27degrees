@@ -76,8 +76,10 @@ jQuery(document).ready(function( $ ) {
 	        
 	        if(scroll < heightHero) {
 		        $(".scroll-section").addClass("fixed");
+		        $(".scroll-shadow").addClass("fixed");
 	        } else {
 		        $(".scroll-section").removeClass("fixed");
+		        $(".scroll-shadow").removeClass("fixed");
 	        }
 	        
 	        // ========= Change anchor within scroll

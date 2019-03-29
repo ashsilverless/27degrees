@@ -45,28 +45,20 @@
                 
 				</div>
     				
-    			<div class="nav-menu-content container pr0 pl0">
-    
-    				<div class="col pr0 pl0">
-    
-    					<div class="row pr0 pl0">
-	    					
-							<div class="menu-trigger">
-								
-								<div class="close-text pr4">Close</div>
-								
-								<?php $smallSiteLogo = get_field('small_logo', 'options');?>
-								<div class="small-logo" style="background-image: url(<?php echo $smallSiteLogo['url']; ?>);"></div>
-								
-								<div class="menu-circle mb1"></div>
-
-								<div class="menu-text">Menu</div>
-							
-							</div>
-    
-    					</div>
-    
-    				</div>
+    			<div class="nav-menu-content container">
+	    			
+					<div class="menu-trigger">
+						
+						<div class="close-text">Close</div>
+						
+						<?php $smallSiteLogo = get_field('small_logo', 'options');?>
+						<div class="small-logo" style="background-image: url(<?php echo $smallSiteLogo['url']; ?>);"></div>
+						
+						<div class="menu-circle mb1"></div>
+						
+						<div class="menu-text">Menu</div>
+						
+					</div>
     
     			</div>
     
