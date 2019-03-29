@@ -10,7 +10,7 @@
     if( get_field('hero_type') !== 'slider'):
 ?>
 
-    <div class="hero <?php the_field( 'hero_height' );?>" style="background-image: url(<?php echo $heroImage['url']; ?>); background-color: <?php echo $heroColor; ?>;">
+<div class="hero <?php the_field( 'hero_height' );?>" style="background-image: url(<?php echo $heroImage['url']; ?>); background-color: <?php echo $heroColor; ?>;">
 
     <?php 
         if( get_field('hero_type') == 'video'): ?>
@@ -22,37 +22,37 @@
         </video>
     
     <? endif;?>
+                
+    <div class="hero__content">       
 
-    <div class="container">
-    
-        <div class="row">
+        <?php $siteLogo = get_field('logo', 'options');?>
+        
+        <div class="site-logo">
+            
+            <a href="<?php echo get_home_url(); ?>">
                 
-            <div class="hero__content">       
-                
-                <h1 class="heading heading__sm heading__light font800"><?php the_field( 'hero_sub_heading' );?></h1>            
-                <h3 class="heading heading__xl heading__light font800"><?php the_field( 'hero_heading' );?></h3>
-                <h2 class="heading heading__sm heading__light"><?php the_field( 'hero_copy' );?></h2>
-
-                <?php 
-                    if( have_rows('button') ): 
-                    while ( have_rows('button') ) : the_row(); ?>
-                    
-                <a href="<?php the_sub_field( 'button_target' );?>" type="button" class="button">
-                    
-                    <?php the_sub_field( 'button_text' );?>
-                
-                </a>
-                
-                <?php endwhile; endif;?>
-                
-            </div>       
-                
+                <img src="<?php echo $siteLogo['url'];?>"/>
+            
+            </a>
+        
         </div>
-    
-    </div>
+  
+        <h1 class="heading heading__xl heading__light font800"><?php the_field( 'hero_heading' );?></h1>
 
-    <!--Scroll To Next Section <a href="" class="next-section">Learn More</a>-->
-    
+        <?php 
+            if( have_rows('button') ): 
+            while ( have_rows('button') ) : the_row(); ?>
+            
+        <a href="<?php the_sub_field( 'button_target' );?>" type="button" class="button">
+            
+            <?php the_sub_field( 'button_text' );?>
+        
+        </a>
+        
+        <?php endwhile; endif;?>
+        
+    </div>       
+
 </div><!--hero-->
 
 <?php endif;?>

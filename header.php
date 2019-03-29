@@ -77,15 +77,3 @@
     		</nav>
     
             <main><!--closes in footer.php-->
-            
-                <?php $siteLogo = get_field('logo', 'options');?>
-                
-                <div class="site-logo">
-                    
-                    <a href="<?php echo get_home_url(); ?>">
-                        
-                        <img src="<?php echo $siteLogo['url'];?>"/>
-                    
-                    </a>
-                
-                </div>
