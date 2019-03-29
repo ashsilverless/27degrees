@@ -147,43 +147,57 @@ a.next-section {
     position: absolute;
     bottom: 0;
     display: block;
-    height: 4em;
+    height: 5em;
     transform: translateX(-50%);
     left: 50%;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 5px;
     color: white;
- 
-     &:before {
-        position: absolute;
-        content: '';
-        bottom: 10px;
-        left: 50%;
-        margin-left: -4px;
-        height: 0;
-        width: 5px;
-        background: hsl(0, 0%, 100%);
-        -webkit-transition: height 0.5s ease;
-        -o-transition: height 0.5s ease;
-        transition: height 0.5s ease;
-        border-radius: 50px;
-    }
-    
-    &:after {
+    z-index: 50;
+    filter: drop-shadow(2px 2px 2px #000000) drop-shadow(4px 4px 2px #000000);
+
+	&:after, &:before {
+		@include circle(1em, 0.1em solid #FFFFFF);
         position: absolute;
         bottom: 0;
         left: 50%;
-        margin-left: -11px;
-        content: '\f054';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 600;
-        font-size: 26px;  
-        transform:rotate(90deg);
-    } 
-    
-    &:hover:before {
-        height:30px;
+        content: '';
+		transform: translateX(-50%);
+		margin-bottom: 0.7em;
+		transition: background-color 0.3s ease;
     }
+
+    
+    &:before {
+	    margin-bottom: 2.1em; 
+    }
+    
+    &:hover {
+	    &:after, &:before {
+			background-color: rgba(255, 255, 255, 0.3);
+		}
+    }
+}
+
+.scroll-section {
+	width: calc(100vw - #{$width-menu});
+    position: absolute;
+    bottom: 0;
+    height: 10em;
+	background: -moz-linear-gradient(top, hsla(0,0%,100%,0) 0%, hsla(0,0%,0%,0.86) 40%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, hsla(0,0%,100%,0) 0%,hsla(0,0%,0%,0.86) 40%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, hsla(0,0%,100%,0) 0%,hsla(0,0%,0%,0.86) 40%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#db000000',GradientType=0 ); /* IE6-9 */
+	z-index: 50;
+	
+	&.fixed {
+		position: fixed;
+		bottom: 0;
+	}
+	
+	.hidden {
+		display: none;
+	}
 }
 
 .collapsed-content {

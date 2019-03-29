@@ -43,10 +43,61 @@ jQuery(document).ready(function( $ ) {
 
     $('nav a, a.button, a.next-section').click(function(){
         $('html, body').animate({
-            scrollTop: $( $(this).attr('href') ).offset().top -100
+            scrollTop: $( $(this).attr('href') ).offset().top
         }, 500);
         return false;
     });
+    
+    
+/* TRANSITION ON SCROLL HERO */
+
+	$(document).ready(function(){
+		var tStart = 0,
+		    tEnd   = $(window).height(),
+		    cStart = 0,
+		    cEnd   = 65,
+		    cDiff  = cEnd - cStart;
+		
+	    $(document).scroll(function() {
+		    $(".logo-hero").css("transition", "opacity 0.25s ease");
+		    
+		    // ========= Change background opacity within scroll
+		    var scroll = $(window).scrollTop();
+	        var percentage = (scroll - tStart) / (tEnd - tStart);
+	        var background;
+	        
+	        percentage = Math.min(1, Math.max(0, percentage));
+	        background = Math.round(cStart + cDiff * percentage) / 100;
+	        
+	        $(".wrapper-hero-home").css('background-color', 'rgba(0, 0, 0, ' + background + ')');
+	        
+	        // ========= Fix scroll button
+	        var heightHero = $(".hero__home__content.description").height();
+	        
+	        if(scroll < heightHero) {
+		        $(".scroll-section").addClass("fixed");
+	        } else {
+		        $(".scroll-section").removeClass("fixed");
+	        }
+	        
+	        // ========= Change anchor within scroll
+	        if(scroll + 100 < heightHero) {
+		        $(".scroll-section a").eq(0).removeClass("hidden");
+		        $(".scroll-section a").eq(1).addClass("hidden");
+	        } else {
+		        $(".scroll-section a").eq(0).addClass("hidden");
+		        $(".scroll-section a").eq(1).removeClass("hidden");
+	        }
+	        
+	        // ========= Change circle scroll
+	         var distance = heightHero - scroll;
+	        $(".circle-background").css({
+	            transform: "translate(0px, " + (-1) * distance / 20 + "%)"
+	        });
+	         
+	    });
+	});
+
 
 // ========== Controller for lightbox elements
 

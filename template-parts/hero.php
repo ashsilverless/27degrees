@@ -10,50 +10,33 @@
     if( get_field('hero_type') !== 'slider'):
 ?>
 
-    <div class="hero mb3 <?php the_field( 'hero_height' );?>" style="background-image: url(<?php echo $heroImage['url']; ?>); background-color: <?php echo $heroColor; ?>;">
+    <div class="hero hero__home mb3" style="background-image: url(<?php echo $heroImage['url']; ?>); background-color: <?php echo $heroColor; ?>;">
+	    <div class="wrapper-hero-home">
 
-    <?php 
-        if( get_field('hero_type') == 'video'): ?>
-    
-        <video autoplay muted loop class="fullscreen-video">
-        
-            <source src="<?php the_field('hero_video');?>" type="video/mp4">
-        
-        </video>
-    
-    <? endif;?>
-
-    <div class="container">
-    
-        <div class="row">
-                
-            <div class="hero__content">       
-                
-                <h1 class="heading heading__sm heading__light font800"><?php the_field( 'hero_sub_heading' );?></h1>            
-                <h3 class="heading heading__xl heading__light"><?php the_field( 'hero_heading' );?></h3>
-                <h2 class="heading heading__sm heading__light"><?php the_field( 'hero_copy' );?></h2>
-
-                <?php 
-                    if( have_rows('button') ): 
-                    while ( have_rows('button') ) : the_row(); ?>
-                    
-                <a href="<?php the_sub_field( 'button_target' );?>" type="button" class="button">
-                    
-                    <?php the_sub_field( 'button_text' );?>
-                
-                </a>
-                
-                <?php endwhile; endif;?>
-                
-            </div>       
-                
-        </div>
-    
-    </div>
+		    <div class="hero__home__content">
+	            <?php $logo = get_field('logo', 'option'); ?>
+				<img class="logo-hero" src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt'] ?>"/>
+	        </div>
+	        
+	        <div id="discover_more" class="hero__home__content description">
+		        <div class="wrapper-heading">
+			    	<h2 class="heading heading__spaced heading__light pb5"><?php the_field('hero_copy');?></h2>
+		        </div>
+		        <div class="circle-background"></div>
+		        
+			</div>
+			
+			<div class='scroll-section fixed'>
+				<a href="#discover_more" class="next-section">Scroll Down</a>
+				<a href="#ADD_NEXT_SECTION" class="next-section hidden">Scroll Down</a>
+			</div>
+	    </div>
 
     <!--Scroll To Next Section <a href="" class="next-section">Learn More</a>-->
     
-</div><!--hero-->
+	</div>
+
+<!--hero-->
 
 <?php endif;?>
 

@@ -45,26 +45,15 @@
                 
 				</div>
     				
-    			<div class="nav-menu-content container">
+    			<div class="nav-menu-content container pr0 pl0">
     
-    				<div class="col">
+    				<div class="col pr0 pl0">
     
-    					<div class="row-1">
-    
-<!--
-    						<div class="menu-trigger hamburger hamburger--collapse">
-    							
-    							<div class="hamburger-box">
-    								
-    								<div class="hamburger-inner"></div>
-    								
-    							</div>
-    							
-    						</div>
--->
+    					<div class="row pr0 pl0">
+	    					
 							<div class="menu-trigger">
-								<div class="close-text pr4">Close</div>
-								<div class="menu-circle mb2"></div>
+								<div class="close-text">Close</div>
+								<div class="menu-circle mb1"></div><br>
 								<div class="menu-text">Menu</div>
 							</div>
     
