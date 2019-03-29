@@ -63,9 +63,16 @@
     						</div>
 -->
 							<div class="menu-trigger">
+								
 								<div class="close-text pr4">Close</div>
-								<div class="menu-circle mb2"></div>
+								
+								<?php $smallSiteLogo = get_field('small_logo', 'options');?>
+								<div class="small-logo" style="background-image: url(<?php echo $smallSiteLogo['url']; ?>);"></div>
+								
+								<div class="menu-circle mb1"></div>
+								
 								<div class="menu-text">Menu</div>
+							
 							</div>
     
     					</div>

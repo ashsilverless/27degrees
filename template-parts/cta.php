@@ -2,13 +2,23 @@
 if( in_array( 'locations', get_field('cta_block_cta') ) ) {
 ?>   
 
-LOCATIONS
+<?php $locationsCtaImage = get_field('locations_image', 'options');?>
+
+<div class="call-to-action" style="background-image: url(<?php echo $locationsCtaImage['url']; ?>);">
+
+    <div class="container">
+    
+        <h3 class="heading heading__md heading__light font800"><?php the_field('locations_headline', 'options');?></h3>
+
+BUTTON
+    
+    </div><!--c-->
+
+</div>
 
 <?php
 }
 ?>
-
-
 
 <?php
 if( in_array( 'newsletter', get_field('cta_block_cta') ) ) {

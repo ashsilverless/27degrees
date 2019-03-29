@@ -26,6 +26,20 @@
     transition: opacity 0.5s ease, transform 1s ease;
 }
 
+.small-logo {
+    @include backgroundContain;
+    position: absolute;
+    height: 23px;
+    width: 50px;
+    left: -15px;
+    top: -2.5em;
+    opacity:0;
+    transition: opacity 0.5s 0.5s ease;
+}
+
+.scrolled .small-logo {
+    opacity: 1;
+}
 /*===========BODY==========*/
 
 .leaders {
