@@ -71,11 +71,11 @@
     background: -webkit-linear-gradient(top, hsla(0,0%,0%,0) 0%,hsla(0,0%,0%,1) 100%);
     background: linear-gradient(to bottom, hsla(0,0%,0%,0) 0%,hsla(0,0%,0%,1) 100%);
 }
-
-@mixin circle($radio, $border...) {
-	width: $radio;
-	height: $radio;
-	background-color: transparent;
-	border-radius: 100%;
-	border: $border;
-}
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+/*ASH*/
+>>>>>>> Ash-Dev
+=======
+/*ASH TEST*/
+>>>>>>> Ash-Dev

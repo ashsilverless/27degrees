@@ -32,7 +32,7 @@ jQuery(document).ready(function( $ ) {
 	$(window).scroll(function() {
         var scroll = $(window).scrollTop();
 
-        if (scroll >= 100) {
+        if (scroll >= 50) {
             $("body").addClass("scrolled");
         } else {
             $("body").removeClass("scrolled");

@@ -4,7 +4,7 @@
     
     <div class="row"><!--Gallery Block -->
     
-        <div class="col-lg-12">
+        <div class="col-lg-12 mb5">
     
         <?php
         $images = get_field('single_gallery');
