@@ -30,7 +30,7 @@ $sides: (top, bottom, left, right); // Sides var
 
 /* Height */
 
-$height: (0, 25, 50, 75, 100); // Amount string.
+$height: (0, 25, 50, 75, 100, 200); // Amount string.
 
 @each $amount in $height {
         .h#{$amount} {
