@@ -52,6 +52,11 @@ jQuery(document).ready(function( $ ) {
 /* TRANSITION ON SCROLL HERO */
 
 	$(document).ready(function(){
+		var opacityScroll = $(window).scrollTop() < 150 ? $(window).scrollTop() : 150;
+        $(".scroll-home span").css({
+            opacity: 1 - (opacityScroll / 150)
+        });
+		
 		var tStart = 0,
 		    tEnd   = $(window).height(),
 		    cStart = 0,
@@ -92,7 +97,7 @@ jQuery(document).ready(function( $ ) {
 	        }
 	        
 	        // ========= Change circle scroll
-	         var distance = heightHero - scroll;
+	        var distance = heightHero - scroll;
 	        $(".circle-background").css({
 	            transform: "translate(0px, " + (-1) * distance / 20 + "%)"
 	        });
@@ -100,6 +105,21 @@ jQuery(document).ready(function( $ ) {
 	        $(".text-block__accent").css({
 	            transform: "translate(0px, " + (1) * distance / 5 + "%)"
 	        });
+	        
+	        // ========= Hide scroll button
+	        var opacityScroll = scroll < 150 ? scroll : 150;
+	        opacityScroll = 1 - (opacityScroll / 150);
+	        
+	        $(".scroll-home div").css({
+	        	opacity: opacityScroll,
+	        	transform: "translate(0px, " + (-1) * scroll / 2 + "%)"
+	        });
+	        
+	        if(opacityScroll == 0) {
+		        $(".scroll-home div").hide();
+	        } else {
+		        $(".scroll-home div").show();
+	        }
 	         
 	    });
 	});
