@@ -44,7 +44,7 @@ jQuery(document).ready(function( $ ) {
     $('nav a, a.button, a.next-section').click(function(){
         $('html, body').animate({
             scrollTop: $( $(this).attr('href') ).offset().top
-        }, 500);
+        }, 2000, 'easeOutExpo');
         return false;
     });
     
