@@ -44,11 +44,10 @@ jQuery(document).ready(function( $ ) {
     $('nav a, a.button, a.next-section').click(function(){
         $('html, body').animate({
             scrollTop: $( $(this).attr('href') ).offset().top
-        }, 2000, 'easeOutExpo');
+        }, 1500, 'easeInOutCirc');
         return false;
     });
-    
-    
+
 /* TRANSITION ON SCROLL HERO */
 
 	$(document).ready(function(){
