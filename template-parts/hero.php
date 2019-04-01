@@ -42,7 +42,7 @@
 							<i class="fas fa-chevron-down"></i>
 						</a>
 						
-						<a href="#ADD_NEXT_SECTION" class="next-section hidden">
+						<a href="#content" class="next-section hidden">
 							<i class="fas fa-chevron-down"></i>
 						</a>
 						
