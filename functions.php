@@ -276,7 +276,7 @@ function silverless_social_sharing_buttons($content) {
 };
 //add_filter( 'the_content', 'silverless_social_sharing_buttons');
 
-/**= Load Menu =**/
+/**= Load Menu =
 
 add_filter('wp_nav_menu_items', 'my_wp_nav_menu_items', 10, 2);
 
@@ -311,3 +311,4 @@ function my_wp_nav_menu_items($items,$args) {
 	
 	return $items;
 }
+**/

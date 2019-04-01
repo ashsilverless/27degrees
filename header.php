@@ -34,14 +34,32 @@
     	<div id="page" class="site-wrapper">
     
     		<nav id="nav">
-	    		
+
 	    		<div class="nav-menu">
-                
-                <?php
-                wp_nav_menu( array(
-                'theme_location' => 'main-menu',
-                'container_class' => 'mainMenu' ) );
-                ?>
+ 						
+                    <?php $mainLogo = get_field('logo', 'options');?>
+                    
+                    <div class="nav-menu__logo"><img src="<?php echo $mainLogo['url'];?>"/></div>        
+						       
+                    <?php
+                    wp_nav_menu( array(
+                    'theme_location' => 'main-menu',
+                    'container_class' => 'mainMenu' ) );
+                    ?>
+
+                    <?php if( have_rows('social_links', 'option') ): ?>
+                    
+                        <div class="social">
+                        
+                        <?php while( have_rows('social_links', 'option') ): the_row(); ?>
+                        
+                            <a href="<?php the_sub_field('page_link'); ?>"><i class="fab fa-<?php the_sub_field('name'); ?>"></i></a>
+                        
+                        <?php endwhile; ?>
+                        
+                        </div>
+                    
+                    <?php endif; ?>
                 
 				</div>
     				

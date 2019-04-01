@@ -210,9 +210,17 @@ nav {
     }
 }
 
+.mainMenu {
+    align-self: center;
+}
+
 .nav-menu {
     position: absolute;
     top:0;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-content: center;
+    justify-content: center;
     right: -100vw;
     width: calc(100vw - #{$width-menu});
     height: 100vh;
@@ -227,23 +235,32 @@ nav {
         opacity:1;
     }
     
+    &__logo {
+        @include backgroundContain;
+        position: relative;
+        width: 25em;
+        height: auto;
+        align-self: flex-end;
+        margin-bottom: 3em;
+    }
+    
     ul {
-        height:100vh;
-        display: grid;
-        grid-template-rows: auto;
-        align-content: center;
-        justify-content: center;
         list-style-type: none;
         margin:0;
-        padding: 0;
+        padding: 0 3em;
+        visibility: hidden;
         
         li {
             letter-spacing: 0.3rem;
 		    margin-bottom: 2.5rem;
 		    text-align: center;
 		    font-size: 0.6rem;
+		    visibility: visible;
+		    transition: opacity 1s ease;
+		    display: block;
             
             a {
+                display: block;
                 color: white;
                 text-transform: uppercase;
                 font-size: 2em;
@@ -255,12 +272,38 @@ nav {
             img {
 	            max-width: 30vw;
             }
+            
+            &:hover a {
+                    color: $brand-primary;
+                    cursor: pointer;                    
+                }
         }
+    }
+
+    ul:hover > li:not(:hover) {
+        opacity:0.2;
     }
 
     .emphasis a {
         padding: 0.25em 1em;
         background: $brand-secondary;
+    }
+    
+    .social {
+        padding-top: 2em;
+        text-align: center;
+        
+        a {
+            position: relative;
+            padding:0 1em;
+            text-align: center;
+            color: white;
+            font-size: 1.5em;  
+            
+            &:hover {
+                color: $brand-primary;
+            }          
+        }
     }
 }
 
