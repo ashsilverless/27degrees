@@ -37,13 +37,18 @@
 					
 					<div class="scroll-section fixed">
 						
-						<a href="#discover_more" class="next-section">Scroll Down</a>
+						<a href="#discover_more" class="next-section scroll-home">
+							<div>Start your adventure</div>
+							<i class="fas fa-chevron-down"></i>
+						</a>
 						
-						<a href="#ADD_NEXT_SECTION" class="next-section hidden">Scroll Down</a>
+						<a href="#ADD_NEXT_SECTION" class="next-section hidden">
+							<i class="fas fa-chevron-down"></i>
+						</a>
 						
 					</div>
 					
-					<div class="scroll-shadow"></div>
+					<div class="scroll-shadow fixed"></div>
 					
 			    </div>
 			    
