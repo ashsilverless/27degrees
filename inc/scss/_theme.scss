@@ -41,6 +41,53 @@
 }
 /*===========BODY==========*/
 
+.sub-menu {
+    margin-top: 2em;
+    li {
+        position: relative;
+        display: inline-block;
+        margin-right: 2em;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        
+        &:after {
+            content:'/';
+            position: absolute;
+            padding:0 0.5em;
+        }
+        
+        &:last-of-type:after {
+            display: none;
+        }
+        
+        &:before {
+            content:'';
+            position: absolute;
+            top: 1.5em;
+            left: calc(50% - 0.5em);
+            width:0.5em;
+            height: 0.5em;
+            border:2px solid black;
+            border-radius: 50px;
+            opacity:0;
+            transition: opacity 0.5s ease;
+        }
+        
+        &.current-menu-item a{
+            color: $brand-primary;
+        }
+        
+        &.current-menu-item:before {
+            opacity: 1;
+        }
+        
+        &:hover:before {
+            opacity:1;
+            border-color: $brand-primary;
+        }
+    }
+}
+
 .leaders {
     
     a {
@@ -72,9 +119,6 @@
         opacity:0.15;
     }
 }
-
-
-
 
 .experience-level {
     position: relative;

@@ -27,12 +27,22 @@ get_header();?>
 <!-- ******************* Hero Content END ******************* -->
 
 <div class="container">
-SUB MENU HERE
+
+<?php if( get_field( 'sub_menu' ) ) : ?>
+
+    <div class="sub-menu mb3">
+        
+		<?php the_field( 'sub_menu' ); ?>
+
+    </div>
+    
+<?php endif; ?>
+
 <!-- ******************* Text Block ******************* -->
 
 <?php if( get_field('text_block_heading') ): ?>
 
-<div class="text-block mt5 mb5">
+<div class="text-block mb5">
 
     <h2 class="heading heading__md mb1"><?php the_field('text_block_heading');?></h2>
 
