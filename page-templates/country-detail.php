@@ -103,9 +103,7 @@ get_header();?>
 <?php if( get_field('climate_heading') ): ?>
 
 <div class="mb5">
-    
-    CLIMATE BLOCK
-
+CLIMATE 
 </div>
 
 <?php endif;?>

@@ -89,15 +89,29 @@
 }
 
 .leaders {
-    
+       
     a {
         display: block;
     }
     
     &__item {
+        position: relative;
         min-height: 20em;
         margin-bottom: 2em;
         padding:2em;
+        overflow: hidden;
+        
+        &:before {
+            content: '';
+            position: absolute;
+            top:50%;
+            left:40%;
+            width:75%;
+            height: 75%;
+            border:2em solid white;
+            border-radius:50%;
+            opacity:0.3;
+        }
     }
 }
 
@@ -202,6 +216,28 @@ ul.features {
     }
 }
 
+ul.list {
+    padding-left:2em;
+    
+    li {
+        position: relative;
+        margin-bottom: 1em;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 300;
+                
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0.25em;
+            left: -2em;
+            width:1em;
+            height: 1em;
+            border:2px solid $brand-primary;
+            border-radius:50px;
+        }
+    }
+}
 
 
 

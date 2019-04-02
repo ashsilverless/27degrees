@@ -451,4 +451,23 @@ input#billing_address_1::placeholder {
 }
 
 
+/* CONTACT FORM 7 */
+
+span.wpcf7-not-valid-tip {
+  color: hsl(0, 100%, 50%);
+  font-size: 0.75em;
+  font-weight: normal;
+  display: block;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+div.wpcf7-validation-errors, div.wpcf7-acceptance-missing {
+    border: none;
+    background: hsl(0, 0%, 85%);
+    text-align: center;
+    padding: 1em;
+    margin: 0;
+}
+
 

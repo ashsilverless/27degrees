@@ -1,7 +1,7 @@
 /*! == COMPONENTS == */
 
 .button {
-    background: $brand-secondary;
+    background: $brand-primary;
     border: 0;
     box-sizing: border-box;
     padding: 1em 2em;
@@ -89,8 +89,8 @@
     
     &__ghost {
         background:transparent;
-        box-shadow: inset 0 0 0 2px $brand-secondary;
-        color: $brand-secondary;
+        box-shadow: inset 0 0 0 2px $brand-primary;
+        color: $brand-primary;
     }
     
     &__prompt {

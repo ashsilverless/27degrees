@@ -192,9 +192,14 @@
 }
 
 .call-to-action {
+    @include backgroundCover;
     display: grid;
     min-height: 20em;
     align-content: center;
+    
+    + .call-to-action {
+        margin-top:2em;
+    }
 }
 
 .carousel {
@@ -558,7 +563,7 @@
 }
 
 .toggle {
-    padding-left: 3em;
+    padding-left: 2em;
 
     &__question {
     
@@ -568,10 +573,17 @@
     
         p {
             position: relative;
-        
-            span {
+            
+            &:before {
+                content: '';
                 position: absolute;
-                left: -3em;
+                top: 0.25em;
+                left: -2em;
+                width:1em;
+                height: 1em;
+                border:2px solid $brand-primary;
+                border-radius:50px;
+                transition: background 0.5s ease;
             }
         }
     
@@ -592,8 +604,8 @@
 
 .toggle.active {
 
-    .toggle__question i {
-        transform: rotate(0deg);
+    .toggle__question p:before {
+        background: $brand-primary;
     }
 
     .toggle__answer {
@@ -674,41 +686,35 @@ article.news {
 }
 
 .formWrapper {
-    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+ 
     input, textarea {
         width: 100%;
-        border: none;
-        font-size: 1.2em;
-        font-family: $supporting-font;
-        padding: 0.25em 0.5em;
-        margin-bottom: 1em;
+        border: 2px solid hsl(204, 45%, 67%);
+        padding: 0.5em 1em;
+        font-weight: 300;
+        letter-spacing: 0.1em;
+        text-align: center;
+        transition: all 0.5s ease;
+        
+        &:focus {
+            outline:none;
+            background:$brand-primary;
+            color: white;
+        }
     }
     
     textarea {
         height:5em;
     }
-    
-    label {
-        position:relative;
-        display: block;
-        text-transform: none;
-        margin: 0;
-        font-size: 1em;
-        font-family: $supporting-font;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        
-        span{
-            position: absolute;
-            right:0;
-            color: $brand-dark-grey;
-        }
-    }
-    
-    .extra-fields {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height .5s ease;
+
+    .text-area,
+    .submit-button {
+        grid-column-start: 1;
+        grid-column-end: 4;    
     }
     
     .submit, .expand-form {
@@ -719,18 +725,17 @@ article.news {
         padding: 1em 3em;
         text-transform: uppercase;
         text-align: center;
-        font-family: $supporting-font;
-        font-weight: 600;
+        font-weight: 300;
         font-size: 0.75em;
         background: $brand-secondary;
         color: white;
     }
     
     ::placeholder {
-        font-family: $supporting-font;
-        font-style: italic;
-        font-size: 0.75em;
-        color: grey;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 1em;
+        color: $brand-primary;
     }
 }
 
@@ -742,17 +747,3 @@ article.news {
         color: $brand-primary;
     }
 }
-
-.mapboxgl-popup-content {
-    background: $brand-secondary;
-    color: hsl(0, 0%, 100%);
-}
-
-.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
-    border-top-color: $brand-secondary;
-}
-
-.mapboxgl-popup-close-button {
-    display: none;
-}
-

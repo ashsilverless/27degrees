@@ -14,7 +14,7 @@
                     
                     <div class="leaders__item" style="background-image: url(<?php echo $leaderImage['url']; ?>);">
                     
-                        <h2 class="heading heading__sm heading__light"><?php the_sub_field( 'heading' );?></h2>  
+                        <h2 class="heading heading__md heading__light"><?php the_sub_field( 'heading' );?></h2>  
                     
                     </div>        
                 </a>       

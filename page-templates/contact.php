@@ -52,9 +52,15 @@ get_header();?>
 
 <!-- ******************* Text Block END ******************* -->
 
-<div class="mb5">
-    CONTACT FORM
-</div>
+<div class="row mb5">
+
+    <div class="col-sm-10">
+
+        <?php echo do_shortcode('[contact-form-7 id="1325" title="Main Contact Form"]');?>
+
+    </div>
+
+</div><!--r-->
 
 <!-- ******************* Full Width Image Block ******************* -->
 

@@ -59,7 +59,7 @@ get_header();?>
 <!-- ******************* Full Width Image END ******************* -->
 
 <!-- ******************* Text 2 Block ******************* -->
-<div class="text-block mt5 mb5">
+<div class="text-block mt5 mb3">
 
     <div class="row">
 
@@ -129,7 +129,15 @@ get_header();?>
 
 <!-- ******************* FAQ Block ******************* -->
 
-<?php get_template_part('template-parts/toggle');?>
+<div class="row mb5">
+
+    <div class="col-sm-6">
+
+        <?php get_template_part('template-parts/toggle');?>
+
+    </div>
+
+</div><!--r-->
 
 <!-- ******************* FAQ Block END ******************* -->
 

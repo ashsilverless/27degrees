@@ -65,7 +65,7 @@ ul {
 .heading {
     font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 0.05em; 
+    letter-spacing: 0.1em; 
     color: $brand-primary;         
     
     &__light {
@@ -90,7 +90,7 @@ ul {
     }   
     
     &__sm {
-        font-size: 1.15em; 
+        font-size: 1em; 
     }
     
     &__xs {

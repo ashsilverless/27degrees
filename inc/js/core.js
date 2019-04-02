@@ -315,10 +315,18 @@ $(window).on('resize scroll', function() {
   $('.experience-level').each(function() {
     if ($(this).isInViewport()) {
       $(this).addClass('active');
-    } else {
-      
-    }
+    } 
   });
+  $('.slide-up').each(function() {
+    if ($(this).isInViewport()) {
+      $(this).addClass('active');    
+    } 
+  });   
+    $('.slide-right').each(function() {
+    if ($(this).isInViewport()) {
+      $(this).addClass('active');    
+    } 
+  });    
 });
 
 });//Don't remove ---- end of jQuery wrapper
