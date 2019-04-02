@@ -36,7 +36,7 @@ get_header();?>
 
         <div class="col-sm-6">
             
-            <h2 class="heading heading__md mb1 slide-up"><?php the_field('text_block_heading');?></h2>
+            <h2 class="heading heading__md mb1"><?php the_field('text_block_heading');?></h2>
             
             <?php get_template_part('template-parts/text', 'block');?>
             
@@ -65,7 +65,7 @@ get_header();?>
 
         <div class="col-sm-6">
 
-            <h2 class="heading heading__md mb1"><?php the_field('text_block2_text_block_heading');?></h2>
+            <h2 class="heading heading__md mb1 slide-up"><?php the_field('text_block2_text_block_heading');?></h2>
             
             <div class="expanding-copy <?php the_sub_field( 'text_type' );?> <?php the_sub_field( 'dev_class' );?>">
             
@@ -226,7 +226,7 @@ get_header();?>
 
         <div class="col-sm-6">
 
-            <h2 class="heading heading__md mb1"><?php the_field('text_block4_text_block_heading');?></h2>
+            <h2 class="heading heading__md mb1 slide-up"><?php the_field('text_block4_text_block_heading');?></h2>
             
             <div class="expanding-copy <?php the_sub_field( 'text_type' );?> <?php the_sub_field( 'dev_class' );?>">
             
