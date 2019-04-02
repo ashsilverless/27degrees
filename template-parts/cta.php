@@ -37,7 +37,9 @@ if( in_array( 'newsletter', get_field('cta_block_cta') ) ) {
     
         <h3 class="heading heading__lg heading__light font800 slide-right"><?php the_field('newsletter_headline', 'options');?></h3>
 
-        <h3 class="heading heading__md heading__light font 300"><?php the_field('newsletter_sub_headline', 'options');?></h3>   
+        <h3 class="heading heading__md heading__light font 300 mb2"><?php the_field('newsletter_sub_headline', 'options');?></h3>   
+
+<?php echo do_shortcode('[contact-form-7 id="1893" title="Subscribe Form"]');?>
     
     </div><!--c-->
 

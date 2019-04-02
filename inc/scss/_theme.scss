@@ -88,6 +88,27 @@
     }
 }
 
+.page-content {
+    position: relative;
+}
+
+.path-wrapper {
+    content: '';
+    position: absolute;
+    top: -8em;
+    bottom: 0;
+    right: 10%;
+    width: 30%;
+    background: hsl(0, 100%, 50%);
+    z-index: -1;
+    text-align: right;
+}
+
+#path {
+    position: static;
+    top: 0; 
+}
+
 .leaders {
        
     a {

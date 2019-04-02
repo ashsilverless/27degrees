@@ -52,6 +52,16 @@ get_header();?>
 
 <!-- ******************* Text Block END ******************* -->
 
+</div><!--c-->
+
+<div class="page-content">
+
+    <div class="path-wrapper">
+        SVG PATH IN HERE
+    </div><!--path wrapper-->
+
+<div class="container">
+
 <!-- ******************* Full Width Image Block ******************* -->
 
 <?php get_template_part('template-parts/fullwidth', 'image');?>
@@ -293,7 +303,8 @@ get_header();?>
 
 <!-- ******************* CTA END ******************* -->
 
-
 </div><!--c-->
+
+</div><!--page content-->
 
 <?php get_footer();?>
