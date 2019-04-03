@@ -41,11 +41,11 @@
     
                     <div class="col-6 socket__colophon">
     
-                        &copy; 27 Degrees South <?php echo date ('Y');?>
+                        <p>&copy; 27 Degrees South <?php echo date ('Y');?>
     
                         <a href="">Terms</a>
     
-                        <a href="">Privacy</a>
+                        <a href="">Privacy</a></p>
 
   <div class="logo-holder">
                             

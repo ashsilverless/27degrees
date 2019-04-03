@@ -133,6 +133,14 @@
             border-radius:50%;
             opacity:0.3;
         }
+        
+        .heading {
+            transition:letter-spacing 0.5s ease;
+        }
+        
+        &:hover .heading {
+            letter-spacing: 5px;
+        }
     }
 }
 
