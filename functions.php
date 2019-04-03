@@ -106,7 +106,13 @@ function my_custom_fonts() {
 .post-type-page .inside.acf-fields > .acf-field > .acf-label {
     color: hsl(0, 0%, 100%);
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: 18px;
+    }
+
+.acf-fields>.acf-tab-wrap .acf-tab-group li.active a {
+  background: hsl(283, 14%, 20%);
+  font-size: 12px;
+  color: hsl(0, 0%, 100%);    
     }
 
 </style>';
