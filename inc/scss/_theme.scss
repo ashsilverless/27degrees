@@ -116,6 +116,7 @@
     }
     
     &__item {
+        @include backgroundCover;
         position: relative;
         min-height: 20em;
         margin-bottom: 2em;
