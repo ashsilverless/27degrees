@@ -102,11 +102,7 @@ get_header();?>
 
 <?php if( get_field('climate_heading') ): ?>
 
-<div class="mb5">
-    
-    CLIMATE BLOCK
-
-</div>
+<?php get_template_part('template-parts/graph');?>
 
 <?php endif;?>
 
