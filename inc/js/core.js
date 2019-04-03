@@ -51,16 +51,14 @@ jQuery(document).ready(function( $ ) {
 /* TRANSITION ON SCROLL HERO */
 
 	$(document).ready(function(){
-		var opacityScroll = $(window).scrollTop() < 150 ? $(window).scrollTop() : 150;
-        $(".scroll-home span").css({
-            opacity: 1 - (opacityScroll / 150)
-        });
 		
 		var tStart = 0,
 		    tEnd   = $(window).height(),
 		    cStart = 0,
 		    cEnd   = 65,
 		    cDiff  = cEnd - cStart;
+		    
+		window.scrollTo(window.scrollX, window.scrollY + 1);
 		
 	    $(document).scroll(function() {
 		    $(".logo-hero").css("transition", "opacity 0.25s ease");
@@ -121,6 +119,72 @@ jQuery(document).ready(function( $ ) {
 	        }
 	         
 	    });
+	});
+
+/* LOAD GRAPHS */
+    
+    $(document).ready(function() {
+	    
+	    $(".month-slider input").trigger("input");
+	    
+        $(document).scroll(function() {
+	        
+	        $(".climate-graph").each(function() {
+		        var graph = $(this);
+		        
+		        var objectBot = $(graph).offset().top + $(graph).outerHeight();
+				var windowBot = $(window).scrollTop() + $(window).height();
+				
+				if(windowBot > objectBot){
+		            var maxHeight = parseFloat($(graph).find(".y-values").height()) - parseFloat($(graph).find(".y-values div").eq(0).height());
+		            var minValue  = parseFloat($(graph).find(".y-values").attr("min-value"));
+		            var maxValue  = parseFloat($(graph).find(".y-values").attr("max-value"));
+		            
+		            $(graph).find(".wrapper-bars").each(function() {
+			            var resultLow, resultHigh;
+			            var lowTemp  = parseFloat($(this).children().eq(0).attr("data-value"));
+			            var highTemp = parseFloat($(this).children().eq(1).attr("data-value"));
+			            
+			            lowTemp  = lowTemp  > maxValue ? maxValue : lowTemp;
+			            lowTemp  = lowTemp  < minValue ? minValue : lowTemp;
+			            highTemp = highTemp > maxValue ? maxValue : highTemp;
+			            highTemp = highTemp < minValue ? minValue : highTemp;
+			            
+			            resultLow  = lowTemp  * maxHeight / (maxValue - minValue);
+			            resultHigh = highTemp * maxHeight / (maxValue - minValue);
+			            
+			            $(this).children().eq(0).css("height", (resultLow + "px"));
+			            $(this).children().eq(1).css("height", (resultHigh + "px"));
+		            });
+		        }
+		    });
+
+	    });
+    });
+
+/* MONTH PICKER */
+
+	$(".month-slider input").on("input", function() {
+		var month = $(this).val();
+		$(".month-value.low-temp  span").text($(".graph-temp .month-item .first-bar.bar ").eq(month).attr("data-value"));
+		$(".month-value.high-temp span").text($(".graph-temp .month-item .second-bar.bar").eq(month).attr("data-value"));
+		$(".month-value.avg-rain  span").text($(".graph-rain .month-item .first-bar.bar ").eq(month).attr("data-value"));
+		
+		$(".ticks span").removeClass("active");
+		$(".ticks span").eq(month).addClass("active");
+		
+		$(".graph-temp .bar").removeClass("current");
+		$(".graph-rain .bar").removeClass("current");
+		
+		$(".graph-temp .wrapper-bars").eq(month).find(".bar").addClass("current");
+		$(".graph-rain .wrapper-bars").eq(month).find(".bar").addClass("current");
+		
+	});
+	
+	$(".ticks div").on("click", function() {
+		var month = parseInt($(this).attr("data-value"));
+		$(".month-slider input").val(month);
+		$(".month-slider input").trigger("input");
 	});
 
 

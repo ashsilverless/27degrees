@@ -260,6 +260,117 @@ ul.list {
     }
 }
 
+.month-slider {
+	
+	input {
+		-webkit-appearance: none;
+		outline: none;
+		position: relative;
+	    display: block;
+	    height :10px;
+	    width:100%;
+	    background:$brand-secondary;
+	    border-radius: 50px;
+	    transition: opacity .2s;
+	    
+	    &::-webkit-slider-thumb {
+		    $svg-color: rgba($brand-secondary, 0.99);
+		    background: url('data:image/svg+xml;utf8,<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20.8 15.3" enable-background="new 0 0 20.8 15.3" xml:space="preserve"><polygon fill="' + $svg-color + '" id="right" points="13.1,15.3 13.1,7.6 13.1,0 20.8,7.6 "/><polygon fill="' + $svg-color + '" id="left" points="7.6,0 7.6,7.6 7.6,15.3 0,7.6 "/></svg>') $brand-primary;
+		    background-size: 70%;
+			background-position: center;
+			background-repeat: no-repeat;
+		    position: relative;
+			-webkit-appearance: none;
+			appearance: none;
+			width: 35px;
+			height: 35px;
+			cursor: pointer;
+			border-radius: 100%;
+			border: 3px solid #FFFFFF;
+			z-index: 2;
+		}
+		
+		&::-moz-range-thumb {
+		    $svg-color: rgba($brand-secondary, 0.99);
+		    background: url('data:image/svg+xml;utf8,<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20.8 15.3" enable-background="new 0 0 20.8 15.3" xml:space="preserve"><polygon fill="' + $svg-color + '" id="right" points="13.1,15.3 13.1,7.6 13.1,0 20.8,7.6 "/><polygon fill="' + $svg-color + '" id="left" points="7.6,0 7.6,7.6 7.6,15.3 0,7.6 "/></svg>') $brand-primary;
+		    background-size: 70%;
+			background-position: center;
+			background-repeat: no-repeat;
+		    position: relative;
+			-webkit-appearance: none;
+			appearance: none;
+			width: 35px;
+			height: 35px;
+			cursor: pointer;
+			border-radius: 100%;
+			border: 3px solid #FFFFFF;
+			z-index: 2;
+		}
+		
+		&::-ms-thumb {
+		    $svg-color: rgba($brand-secondary, 0.99);
+		    background: url('data:image/svg+xml;utf8,<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20.8 15.3" enable-background="new 0 0 20.8 15.3" xml:space="preserve"><polygon fill="' + $svg-color + '" id="right" points="13.1,15.3 13.1,7.6 13.1,0 20.8,7.6 "/><polygon fill="' + $svg-color + '" id="left" points="7.6,0 7.6,7.6 7.6,15.3 0,7.6 "/></svg>') $brand-primary;
+		    background-size: 70%;
+			background-position: center;
+			background-repeat: no-repeat;
+		    position: relative;
+			-webkit-appearance: none;
+			appearance: none;
+			width: 35px;
+			height: 35px;
+			cursor: pointer;
+			border-radius: 100%;
+			border: 3px solid #FFFFFF;
+			z-index: 2;
+		}
+	}
+	
+	.ticks {
+		display: flex;
+		justify-content: space-between;
+		padding: 0 5px;
+		
+		div {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			text-align: center;
+			text-transform: uppercase;
+			height: 50px;
+			writing-mode: vertical-rl;
+			font-size: 14px;
+			letter-spacing: 0.1em;
+			cursor: pointer;
+			
+			
+			&:before {
+				content: '';
+				position: absolute;
+			    width: 8px;
+			    height: 8px;
+			    top: -9px;
+			    left: 50%;
+			    transform: translateX(-50%);
+		        background: $brand-primary;
+		        border-radius: 50px;
+			}
+			
+			span {
+				transition: all 0.3s ease;
+				
+				&.active {
+				    font-weight: bold;
+				    text-shadow: 3px 3px 5px #85b1d1;
+				    transform: scale(1.2);
+				}
+			}
+			
+			&:hover > span {
+			    transform: scale(1.2);
+			}
+		}
+	}
+}
 
 
 
