@@ -212,6 +212,7 @@ nav {
 
 .mainMenu {
     align-self: center;
+    transition: opacity 1s ease;
 }
 
 .nav-menu {
@@ -242,6 +243,11 @@ nav {
         height: auto;
         align-self: flex-end;
         margin-bottom: 3em;
+        
+        &:hover + .mainMenu,
+        &:hover + .mainMenu + .social {
+            opacity:0.2;
+        }
     }
     
     ul {
@@ -292,6 +298,7 @@ nav {
     .social {
         padding-top: 2em;
         text-align: center;
+        transition: opacity 1s ease;
         
         a {
             position: relative;
@@ -330,9 +337,13 @@ nav {
 	font-size: 1em;
     letter-spacing: 0.4rem;
     opacity: 0;
-    transition: transform 0.5s ease, opacity 0.5s ease, color 0.5s ease;
+    transition: transform 0.5s ease, opacity 0.5s ease, color 0.5s ease, letter-spacing 0.5s ease;
     transform: translateX(30%);
     
+    &:hover {
+        letter-spacing: 10px;
+    }
+        
     &.menu-open {
 	    transform: translateX(0);
         opacity: 1;
@@ -350,8 +361,12 @@ nav {
 	font-size: 1em;
     letter-spacing: 0.4rem;
     opacity: 1;
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    transition: transform 0.5s ease, opacity 0.5s ease, letter-spacing 0.5s ease;
     transform: rotate(180deg);
+    
+    &:hover {
+        letter-spacing: 10px;
+    }
     
     &.menu-open {
         transform: translateY(-50%) rotate(180deg);
@@ -382,6 +397,11 @@ footer {
     font-size: 0.75em;
     color: white;
     
+    p {
+        display: inline-block;
+        font-weight: 300;
+    }
+    
     a {
         color: white;
     }
@@ -400,7 +420,18 @@ footer {
       }
     }
     
-    .accreds img {
-        max-height: 50px;
+    .accreds {
+        text-align: center;
+        
+        img {
+            max-height: 50px;
+            margin:0 10px;
+        }
+    }
+    
+    .socials {
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-content: center;        
     }
   }

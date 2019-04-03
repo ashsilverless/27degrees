@@ -39,8 +39,14 @@
  						
                     <?php $mainLogo = get_field('logo', 'options');?>
                     
-                    <div class="nav-menu__logo"><img src="<?php echo $mainLogo['url'];?>"/></div>        
-						       
+                    
+                    <div class="nav-menu__logo">
+                        <a href="<?php echo get_home_url(); ?>">
+                            <img src="<?php echo $mainLogo['url'];?>"/>
+                        </a>
+                    </div>        
+                    
+                    
                     <?php
                     wp_nav_menu( array(
                     'theme_location' => 'main-menu',
