@@ -5,10 +5,11 @@
     background: $brand-primary;
     border: none;
     padding: 1em 2em;
+    z-index: 10; 
+    letter-spacing: 0.2em;
     text-align: center;
     text-transform: uppercase;
     color: white;
-    position: relative;
     vertical-align: middle;
     -webkit-appearance: none;
     transition: color 0.5s, background 0.5s ease, letter-spacing 1s ease;
@@ -28,8 +29,7 @@
   
     &:hover {
         background: transparent;
-        color: $brand-primary;
-        letter-spacing: 3px;
+        color: white;
     }
 
     &:hover:before {
@@ -93,14 +93,34 @@
     transition:$fastEffect;
     font-family: $supporting-font;
     text-transform: uppercase;
-    font-size: 0.75em;
-    letter-spacing: 2px;
+    letter-spacing: 0.2em;
     color: $brand-primary !important;
     border:1px solid $brand-primary;
 
-  &:hover {
-      cursor:pointer;
-  }
+    &:hover {
+        background: transparent;
+        color: white;
+        cursor:pointer;
+    }
+  
+    &::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: $brand-secondary;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: transform 0.5s ease;
+        transform: scaleX(0);
+    }
+
+    &:hover:before {
+        transform:scaleX(1);
+    }  
+  
+  
 }
 
 a.next-section {

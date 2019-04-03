@@ -5,10 +5,9 @@
  */
 ?>
 
-            </main>
-    
-            <footer class="footer">
+</main>
 
+    <footer class="footer">
     
         <div class="container">
     
