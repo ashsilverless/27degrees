@@ -323,10 +323,13 @@ ACCOM REPEATER HERE
 
 <div class="container">
 
-
 <div class="row">
 
     <?php get_template_part('template-parts/graph');?>
+
+</div>
+
+</div>
 
 </div>
 
