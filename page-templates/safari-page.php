@@ -361,10 +361,7 @@ function openPage(pageName) {
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
-<<<<<<< HEAD
-=======
 
->>>>>>> Ash-Dev
   document.getElementById(pageName).style.display = "block";
 }
 document.getElementById("defaultOpen").click();
