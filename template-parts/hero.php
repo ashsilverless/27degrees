@@ -57,17 +57,6 @@
 		<?php else: ?>
 		
 		    <div class="hero <?php the_field( 'hero_height' );?>" style="background-image: url(<?php echo $heroImage['url']; ?>); background-color: <?php echo $heroColor; ?>;">
-
-		    <?php 
-		        if( get_field('hero_type') == 'video'): ?>
-		    
-		        <video autoplay muted loop class="fullscreen-video">
-		        
-		            <source src="<?php the_field('hero_video');?>" type="video/mp4">
-		        
-		        </video>
-		    
-		    <? endif;?>
 		                
 		    <div class="hero__content">       
 		
@@ -84,7 +73,7 @@
 		        </div>
 		  
 		        <h1 class="heading heading__xl heading__light font800"><?php the_field( 'hero_heading' );?></h1>
-		
+                <h2 class="heading heading__md heading__light font400"><?php the_field( 'hero_sub_heading' );?></h1>
 		        <?php 
 		            if( have_rows('button') ): 
 		            while ( have_rows('button') ) : the_row(); ?>

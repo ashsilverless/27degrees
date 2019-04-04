@@ -38,37 +38,23 @@ get_header();?>
     
 <?php endif; ?>
 
+<!-- ******************* Tab Controls ******************* -->
+<div class="sub-menu mb3">
+    <ul>
+        <li class="tablink active" onclick="openPage('overview')" id="defaultOpen">Overview</li>
+        <li class="tablink" onclick="openPage('riding')">Riding</li>
+        <li class="tablink" onclick="openPage('accom')">Accommodation</li>
+        <li class="tablink" onclick="openPage('gallery')">Gallery</li>
+        <li class="tablink" onclick="openPage('location')">Location</li>
+    </ul>
+</div>
+<!-- ******************* Tab Controls END ******************* -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div><!--wrap all tab content to enable sub menu to remain sticky-->
 
 <!-- ******************* Overview Tab ******************* -->
 
-<div class="overview-tab">
+<div id="overview" class="overview-tab tabcontent">
 
     <div class="text-block mb5">
 
@@ -149,7 +135,7 @@ get_header();?>
 
 <!-- ******************* Riding Tab ******************* -->
 
-<div class="riding-tab">
+<div id="riding" class="riding-tab tabcontent">
 
     <div class="text-block mb5">
 
@@ -229,7 +215,7 @@ get_header();?>
 
 <!-- ******************* Accommodation Tab ******************* -->
 
-<div class="accommodation-tab">
+<div id="accom" class="accommodation-tab tabcontent">
 
 ACCOM REPEATER HERE
 
@@ -239,7 +225,7 @@ ACCOM REPEATER HERE
 
 <!-- ******************* Gallery Tab ******************* -->
 
-<div class="gallery-tab">
+<div id="gallery" class="gallery-tab tabcontent">
 
 <?php get_template_part('template-parts/gallery');?>
 
@@ -249,7 +235,11 @@ ACCOM REPEATER HERE
 
 <!-- ******************* Location Tab ******************* -->
 
-<div class="location-tab">
+<div id="location" class="location-tab tabcontent">
+
+<div class="container">
+    
+    <div class="row">
 
     <div class="text-block mb5">
 
@@ -326,12 +316,13 @@ ACCOM REPEATER HERE
 </div><!--r-->
 
 </div><!--c-->
-
+    
     <?php $fullwidthImage = get_field('location_background_image');?>
     
     <div class="fullwidth-image mb5" style="background-image: url(<?php echo $fullwidthImage['url']; ?>);"></div>
 
 <div class="container">
+
 
 <div class="row">
 
@@ -340,6 +331,8 @@ ACCOM REPEATER HERE
 </div>
 
 <!-- ******************* Location Tab END ******************* -->
+
+</div><!--wrap all tab content to enable sub menu to remain sticky-->
 
 <!-- ******************* CTA Block ******************* -->
 </div><!--c-->
@@ -357,5 +350,25 @@ ACCOM REPEATER HERE
 <!-- ******************* Leaders END ******************* -->
 
 </div><!--c-->
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
 
 <?php get_footer();?>
