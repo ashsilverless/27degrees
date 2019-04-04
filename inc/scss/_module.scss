@@ -330,6 +330,14 @@
     }
 }
 
+.accom-block .gallery {
+    grid-template-columns: 1fr;
+    
+    a {
+        grid-area:auto;
+    }
+}
+
 .filter-gallery {
     margin-bottom: 3em;
 

@@ -217,7 +217,143 @@ get_header();?>
 
 <div id="accom" class="accommodation-tab tabcontent">
 
-ACCOM REPEATER HERE
+    <div class="text-block mb5">
+
+    <h2 class="heading heading__md mb1"><?php the_field('accom_text_block_heading');?></h2>
+
+    <div class="row">
+
+        <div class="col-6">
+                        
+            <div class="expanding-copy <?php the_sub_field( 'text_type' );?> <?php the_sub_field( 'dev_class' );?>">
+            
+                <div class="expanding-copy__lead">
+                
+                    <p><?php the_field( 'accom_text_block_text' );?></p>
+                
+                </div>
+                
+                <?php if( get_field('accom_text_block_text_more') ): ?>
+                
+                    <a class="trigger-expand">Read More</a>    
+                
+                <?php endif; ?>
+                
+                <div class="expanding-copy__more">
+                
+                    <?php the_field('accom_text_block_text_more'); ?>          
+                
+                </div>    
+                
+                <?php if( get_field('accom_text_block_text_more') ): ?>
+                
+                    <a class="trigger-collapse hide">Read Less</a>    
+                
+                <?php endif; ?>
+                
+            </div>
+            
+            <?php if( get_field('accom_logo_accent') == 'true' ): ?>
+            
+            <?php $accentLogo = get_field('small_logo', 'options');?>
+            
+                <div class="text-block__accent" style="background-image: url(<?php echo $accentLogo['url']; ?>);"></div>
+            
+            <?php endif;?>
+            
+        </div>
+
+        <div class="col-sm-5 offset-sm-1">
+
+        <?php if( get_field('accom_text_block_supporting_list') ): ?>
+            
+        <?php if( have_rows('accom_text_block_supporting_list') ): ?>
+            
+            <ul class="features font200">
+                
+                <?php while ( have_rows('accom_text_block_supporting_list') ) : the_row(); ?>
+    
+                    <li><?php the_sub_field( 'list_item' );?></li> 
+    
+                <?php endwhile;?>
+            
+            </ul>
+            
+        <?php endif;?>
+            
+        <?php endif; ?>
+        
+        </div>
+        
+    </div><!--r-->
+
+    </div>
+
+    <div class="accom-block">
+
+        <?php if( have_rows('accm_content') ): 
+        while ( have_rows('accm_content') ) : the_row(); ?>   
+        <div class="row mb3">
+        
+            <div class="col-6">
+    
+        <h2 class="heading heading__md mb1"><?php the_sub_field('heading');?></h2>
+               
+            <div class="expanding-copy <?php the_sub_field( 'text_type' );?> <?php the_sub_field( 'dev_class' );?>">
+            
+                <div class="expanding-copy__lead">
+                
+                    <p><?php the_sub_field( 'text' );?></p>
+                
+                </div>
+                
+                <?php if( get_sub_field('text_more') ): ?>
+                
+                    <a class="trigger-expand">Read More</a>    
+                
+                <?php endif; ?>
+                
+                <div class="expanding-copy__more">
+                
+                    <?php the_sub_field('text_more'); ?>          
+                
+                </div>    
+                
+                <?php if( get_sub_field('text_more') ): ?>
+                
+                    <a class="trigger-collapse hide">Read Less</a>    
+                
+                <?php endif; ?>
+                
+            </div><!--expanding-->
+            
+        </div><!--col-->
+
+            <div class="col-6">
+        
+            <?php
+            $images = get_sub_field('gallery');
+            if( $images ): ?>
+        
+                <div class="gallery">
+        
+                    <?php foreach( $images as $image ): ?>
+        
+                    <a href="<?php echo $image['url']; ?>" class="lightbox-gallery"  alt="<?php echo $image['alt']; ?>" style="background-image: url(<?php echo $image['url']; ?>);"><!--<?php echo $image['caption']; ?>--></a>
+        
+                    <?php endforeach; ?>
+        
+                </div>
+        
+            <?php endif; ?>
+
+            </div>
+
+       </div><!--r--> 
+       
+    <?php endwhile; endif;?>
+   
+    </div>
 
 </div>
 
