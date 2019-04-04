@@ -56,10 +56,6 @@ get_header();?>
 
 <div class="page-content">
 
-    <div class="path-wrapper">
-        SVG PATH IN HERE
-    </div><!--path wrapper-->
-
 <div class="container">
 
 <!-- ******************* Full Width Image Block ******************* -->
@@ -69,7 +65,9 @@ get_header();?>
 <!-- ******************* Full Width Image END ******************* -->
 
 <!-- ******************* Text 2 Block ******************* -->
-<div class="text-block mt5 mb5">
+<div class="text-block pt5 pb5">
+
+	<?php set_query_var('path', 1); get_template_part('template-parts/path-image');?>
 
     <div class="row">
 
@@ -150,7 +148,9 @@ get_header();?>
 <!-- ******************* Full Width Image 2 END ******************* -->
 
 <!-- ******************* Text 3 Block ******************* -->
-<div class="text-block mt5 mb5">
+<div class="text-block pt5 pb5">
+	
+	<?php set_query_var('path', 2); get_template_part('template-parts/path-image');?>
 
     <div class="row">
 
@@ -230,7 +230,9 @@ get_header();?>
 <!-- ******************* Full Width Image 3 END ******************* -->
 
 <!-- ******************* Text 3 Block ******************* -->
-<div class="text-block mt5 mb5">
+<div class="text-block pt5 pb5">
+	
+	<?php set_query_var('path', 3); get_template_part('template-parts/path-image');?>
 
     <div class="row">
 

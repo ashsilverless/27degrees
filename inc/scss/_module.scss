@@ -778,11 +778,11 @@ article.news {
 		}
 		
 		&.primary:before {
-			background-color: $brand-secondary;
+			background-color: darken($brand-secondary, 3%);
 		}
 		
 		&.secondary:before {
-			background-color: $brand-primary;
+			background-color: darken($brand-primary, 3%);
 		}
 	}
 	
@@ -851,21 +851,21 @@ article.news {
 					
 					&.second-bar {
 						height: 0px;
-						background-color: lighten($brand-primary, 20%);
+						background-color: lighten($brand-primary, 25%);
 						z-index: 2;
 						
 						&.current {
-							background-color: $brand-primary;
+							background-color: darken($brand-primary, 3%);
 						}
 					}
 					
 					&.first-bar {
 						height: 0px;
-						background-color: lighten($brand-secondary, 20%);
+						background-color: lighten($brand-secondary, 25%);
 						z-index: 3;
 						
 						&.current {
-							background-color: $brand-secondary;
+							background-color: darken($brand-secondary, 3%);
 						}
 					}
 				}
