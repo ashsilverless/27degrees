@@ -187,6 +187,68 @@ jQuery(document).ready(function( $ ) {
 		$(".month-slider input").trigger("input");
 	});
 
+/* LOAD PATH */
+    
+    $(document).ready(function() {
+	    
+	    $(".path-wrapper svg path").each(function() {
+		    var path   = $(this);
+		    var length = path.get(0).getTotalLength();
+		    path.css({
+			    "stroke-dasharray": length,
+				"stroke-dashoffset": length
+			});
+			path.attr("path-length", length);
+	    });
+	    
+	    $(document).scroll(function() {
+			$(".path-wrapper svg path").each(function() {
+			    var path      = $(this);
+			    var length    = path.attr("path-length");
+			    var svgHeight = path.parent().outerHeight();
+			    var objectBot = path.offset().top + svgHeight + 50;
+				var windowBot = $(window).scrollTop() + $(window).height();
+					
+				if((objectBot - 100) < windowBot) {
+					// Path drawing
+					
+				    var scroll = (windowBot - objectBot) / windowBot;
+				    var draw   = length - (length * scroll * 5);
+						draw   = draw < 0 ? 0 : draw;
+						draw   = draw > length ? length : draw;
+				    path.css("stroke-dashoffset", draw);
+				    
+				    // Circle drawing
+				    
+				    var scrollC  = (windowBot - objectBot);
+				    var middle   = svgHeight / 2;
+				    var middle_l = middle - 20;
+				    var middle_h = middle + 20;
+				    
+				    //var drawCircle = svgHeight - (svgHeight * scrollC * 5);
+				    //var drawCircle = middle_h - scrollC;
+					//	drawCircle = drawCircle < 0 ? 0 : drawCircle;
+					//	drawCircle = drawCircle > svgHeight ? svgHeight : drawCircle;
+				    
+				    var circle = path.parent().find("circle");
+/*
+					var scale  = middle_h - scrollC;
+					    scale  = drawCircle > middle_h ? 0  : scale;
+					    scale  = drawCircle < middle_l ? 40 : scale;
+					    scale  = scale / 40;
+*/
+					var scale  = middle_h - scrollC;
+					    scale  = scale > 40 ? 40 : scale;
+					    scale  = scale < 0  ? 0  : scale;
+					    scale  = 1 - (scale / 40);
+					
+					var radio  = circle.attr("original-radio") * scale;
+					circle.attr("r", radio);
+				}
+			});
+		});
+	});
+
 
 // ========== Controller for lightbox elements
 
