@@ -102,15 +102,14 @@
 }
 
 .path-wrapper {
-    content: '';
-    position: absolute;
-    top: -8em;
-    bottom: 0;
-    right: 10%;
-    width: 30%;
-    background: hsl(0, 100%, 50%);
-    z-index: -1;
-    text-align: right;
+	
+	svg {
+		height: 100%;
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    transform: rotate(180deg);
+	}
 }
 
 #path {
