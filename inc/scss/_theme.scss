@@ -42,7 +42,12 @@
 /*===========BODY==========*/
 
 .sub-menu {
-    margin-top: 2em;
+    position: sticky;
+    top: 0px;
+    padding: 2em 0;
+    background:white;
+    z-index: 999;
+    
     li {
         position: relative;
         display: inline-block;
@@ -73,13 +78,17 @@
             transition: opacity 0.5s ease;
         }
         
-        &.current-menu-item a{
+        &.active{
             color: $brand-primary;
         }
         
-        &.current-menu-item:before {
+        &.active:before {
             opacity: 1;
         }
+        
+        &:hover {
+            cursor:pointer;
+        } 
         
         &:hover:before {
             opacity:1;
@@ -369,7 +378,6 @@ ul.list {
 				
 				&.active {
 				    font-weight: bold;
-				    text-shadow: 3px 3px 5px #85b1d1;
 				    transform: scale(1.2);
 				}
 			}
@@ -381,8 +389,10 @@ ul.list {
 	}
 }
 
-
-
+.tabcontent {
+  display: none;
+  height: 100%;
+}
 
 
 
