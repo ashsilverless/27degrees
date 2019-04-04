@@ -104,6 +104,14 @@ ul {
 	    letter-spacing: 0.6em;
     }
 
+    span {
+        border-left: 2px solid $brand-primary;
+        font-size: 0.75em;
+        line-height: 1.25em;
+        margin-left: 0.5em;
+        padding: 0.5em 1em;
+    }
+
 }
 
 /*===========HEADER==========*/

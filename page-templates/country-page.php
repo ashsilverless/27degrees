@@ -50,254 +50,57 @@ get_header();?>
 
 </div>
 
-<!-- ******************* Text Block END ******************* -->
+<!-- ******************* Safari Block (Repeater) ******************* -->
 
-</div><!--c-->
+    <div class="safari-block">
 
-<div class="page-content">
-
-<div class="container">
-
-<!-- ******************* Full Width Image Block ******************* -->
-
-<?php get_template_part('template-parts/fullwidth', 'image');?>
-
-<!-- ******************* Full Width Image END ******************* -->
-
-<!-- ******************* Text 2 Block ******************* -->
-<div class="text-block pt5 pb5">
-
-	<?php set_query_var('path', 1); get_template_part('template-parts/path-image');?>
-
-    <div class="row">
-
-        <div class="col-sm-6">
-
-            <h2 class="heading heading__md mb1 slide-up"><?php the_field('text_block2_text_block_heading');?></h2>
-            
-            <div class="expanding-copy <?php the_sub_field( 'text_type' );?> <?php the_sub_field( 'dev_class' );?>">
-            
-                <div class="expanding-copy__lead">
-                
-                    <p><?php the_field( 'text_block2_text_block_text' );?></p>
-                
-                </div>
-                
-                <?php if( get_field('text_block2_text_block_text_more') ): ?>
-                
-                    <a class="trigger-expand">Read More</a>    
-                
-                <?php endif; ?>
-                
-                <div class="expanding-copy__more">
-                
-                    <?php the_field('text_block2_text_block_text_more'); ?>          
-                
-                </div>    
-                
-                <?php if( get_field('text_block2_text_block_text_more') ): ?>
-                
-                    <a class="trigger-collapse hide">Read Less</a>    
-                
-                <?php endif; ?>
-
-                <?php if( get_field('text_block2_text_block_experience_level')): ?>
-            
-                    <div class="experience-level <?php the_field('text_block2_text_block_experience_level');?> mt2 mb2">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-            
-                <?php endif;?>
-
-                <?php if( get_field('text_block2_button_query') == 'true' ): ?>
-            
-                    <a href="<?php the_field( 'text_block2_button_target' );?>" class="button">
-                        
-                        <?php the_field( 'text_block2_button_text' );?>
-                    
-                    </a>
-            
-                <?php endif;?>
-                
-            </div>
-        
-        </div>
-
-        <div class="col-sm-6">
-        
-        </div>
-        
-    </div><!--r-->
-
-</div>
-
-<!-- ******************* Text 2 Block END ******************* -->
-
-<!-- ******************* Full Width Image 2 Block ******************* -->
-
-</div><!--c-->
-
-    <?php $fullwidthImage = get_field('image_block2_background_image');?>
+        <?php if( have_rows('safari_safari') ): 
+        while ( have_rows('safari_safari') ) : the_row(); ?>   
     
-    <div class="fullwidth-image" style="background-image: url(<?php echo $fullwidthImage['url']; ?>);"></div>
+    </div><!--r-->
+    </div><!--c-->
 
-<div class="container">
+        <?php $fullwidthImage = get_sub_field('image');?>
+        
+        <div class="fullwidth-image" style="background-image: url(<?php echo $fullwidthImage['url']; ?>);"></div>
 
-<!-- ******************* Full Width Image 2 END ******************* -->
-
-<!-- ******************* Text 3 Block ******************* -->
-<div class="text-block pt5 pb5">
-	
-	<?php set_query_var('path', 2); get_template_part('template-parts/path-image');?>
-
-    <div class="row">
-
-        <div class="col-sm-6">
-
-            <h2 class="heading heading__md mb1 slide-up"><?php the_field('text_block3_text_block_heading');?></h2>
+        <div class="container"> 
+                
+            <div class="row pb5 text-block pt3">
+                
+                <?php set_query_var('path', 1); get_template_part('template-parts/path-image');?>
+                
+                <div class="col-6">
             
-            <div class="expanding-copy <?php the_sub_field( 'text_type' );?> <?php the_sub_field( 'dev_class' );?>">
-            
-                <div class="expanding-copy__lead">
-                
-                    <p><?php the_field( 'text_block3_text_block_text' );?></p>
-                
-                </div>
-                
-                <?php if( get_field('text_block3_text_block_text_more') ): ?>
-                
-                    <a class="trigger-expand">Read More</a>    
-                
-                <?php endif; ?>
-                
-                <div class="expanding-copy__more">
-                
-                    <?php the_field('text_block3_text_block_text_more'); ?>          
-                
-                </div>    
-                
-                <?php if( get_field('text_block3_text_block_text_more') ): ?>
-                
-                    <a class="trigger-collapse hide">Read Less</a>    
-                
-                <?php endif; ?>
-
-                <?php if( get_field('text_block3_text_block_experience_level')): ?>
-            
-                    <div class="experience-level <?php the_field('text_block3_text_block_experience_level');?> mt2 mb2">
+                    <h2 class="heading heading__md mb1"><?php the_sub_field('heading');?>
+                        <span><?php the_sub_field('sub_heading');?></span>
+                    </h2>
+                                      
+                    <p><?php the_sub_field( 'text' );?></p>
+        
+                    <h4 class="heading heading__sm mb1">Experience Level</h2>            
+                    
+                    <div class="experience-level <?php the_sub_field('experience_level');?> mt2 mb2">
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>
-            
-                <?php endif;?>
-            
-                <?php if( get_field('text_block3_button_query') == 'true' ): ?>
-            
-                    <a href="<?php the_field( 'text_block3_button_target' );?>" type="button" class="button">
-                        
-                        <?php the_field( 'text_block3_button_text' );?>
+        
+                    <a href="<?php the_sub_field( 'button_target' );?>" type="button" class="button">
                     
+                    <?php the_sub_field( 'button_text' );?>
+                
                     </a>
-            
-                <?php endif;?>
-                
-            </div>
-            
+        
+                </div><!--col-->
+        
+            </div><!--r--> 
+               
+            <?php endwhile; endif;?>
+           
         </div>
 
-        <div class="col-sm-6">
-        
-        </div>
-        
-    </div><!--r-->
-
-</div>
-<!-- ******************* Text Block END ******************* -->
-
-<!-- ******************* Full Width Image 3 Block ******************* -->
-
-</div><!--c-->
-
-    <?php $fullwidthImage = get_field('image_block3_background_image');?>
-    
-    <div class="fullwidth-image" style="background-image: url(<?php echo $fullwidthImage['url']; ?>);"></div>
-
-<div class="container">
-
-<!-- ******************* Full Width Image 3 END ******************* -->
-
-<!-- ******************* Text 3 Block ******************* -->
-<div class="text-block pt5 pb5">
-	
-	<?php set_query_var('path', 3); get_template_part('template-parts/path-image');?>
-
-    <div class="row">
-
-        <div class="col-sm-6">
-
-            <h2 class="heading heading__md mb1 slide-up"><?php the_field('text_block4_text_block_heading');?></h2>
-            
-            <div class="expanding-copy <?php the_sub_field( 'text_type' );?> <?php the_sub_field( 'dev_class' );?>">
-            
-                <div class="expanding-copy__lead">
-                
-                    <p><?php the_field( 'text_block4_text_block_text' );?></p>
-                
-                </div>
-                
-                <?php if( get_field('text_block4_text_block_text_more') ): ?>
-                
-                    <a class="trigger-expand">Read More</a>    
-                
-                <?php endif; ?>
-                
-                <div class="expanding-copy__more">
-                
-                    <?php the_field('text_block4_text_block_text_more'); ?>          
-                
-                </div>    
-                
-                <?php if( get_field('text_block4_text_block_text_more') ): ?>
-                
-                    <a class="trigger-collapse hide">Read Less</a>    
-                
-                <?php endif; ?>
-
-                <?php if( get_field('text_block4_text_block_experience_level')): ?>
-            
-                    <div class="experience-level <?php the_field('text_block4_text_block_experience_level');?> mt2 mb2">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-            
-                <?php endif;?>
-            
-                <?php if( get_field('text_block4_button_query') == 'true' ): ?>
-            
-                    <a href="<?php the_field( 'text_block4_button_target' );?>" type="button" class="button">
-                        
-                        <?php the_field( 'text_block4_button_text' );?>
-                    
-                    </a>
-            
-                <?php endif;?>
-                
-            </div>
-            
-        </div>
-
-        <div class="col-sm-6">
-        
-        </div>
-        
-    </div><!--r-->
-
-</div>
-<!-- ******************* Text Block END ******************* -->
+<!-- ******************* Safari Block (Repeater) END ******************* -->
 
 <!-- ******************* CTA Block ******************* -->
 </div><!--c-->
@@ -306,7 +109,5 @@ get_header();?>
 <!-- ******************* CTA END ******************* -->
 
 </div><!--c-->
-
-</div><!--page content-->
 
 <?php get_footer();?>
