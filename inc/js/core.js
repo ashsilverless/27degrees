@@ -241,6 +241,8 @@ jQuery(document).ready(function( $ ) {
 				var newScroll = $(window).scrollTop();
 				
 				if(intersection && oldScroll) {
+					animationReduce.attr("fill", "freeze");
+					animationGrow.attr("fill", "freeze");
 					if(newScroll < oldScroll && animationReduce.attr("triggered") == 0) {
 						animationReduce.get(0).beginElement();
 						animationReduce.attr("triggered", 1);
@@ -252,16 +254,20 @@ jQuery(document).ready(function( $ ) {
 					}
 				}
 				
-				if(!intersection) {
-					if(point.y < circle.attr("cy")) {
-						circle.attr("r", 20);
-						animationReduce.attr("triggered", 0);
-						animationGrow.attr("triggered", 1);
-					} else if(point.y > circle.attr("cy")) {
-						circle.attr("r", 0);
-						animationReduce.attr("triggered", 1);
-						animationGrow.attr("triggered", 0);
-					}
+				if(!intersection && point.y < circleAux.attr("cy")) {
+					animationReduce.attr("fill", "");
+					animationGrow.attr("fill", "");
+					circle.attr("r", "20");
+					animationReduce.attr("triggered", 0);
+					animationGrow.attr("triggered", 1);
+				}
+				
+				if(!intersection && point.y > circleAux.attr("cy")) {
+					animationReduce.attr("fill", "");
+					animationGrow.attr("fill", "");
+					circle.attr("r", "0");
+					animationReduce.attr("triggered", 1);
+					animationGrow.attr("triggered", 0);
 				}
 				circle.attr("scroll", newScroll);
 
