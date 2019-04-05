@@ -221,7 +221,7 @@ jQuery(document).ready(function( $ ) {
 				var pathDrawing = (imgScroll * pathLength) / imgHeight; // Equivalent path drawing to the scroll
 				
 				if(svgImage.hasClass("first")) {
-					pathDrawing *= 2;
+					pathDrawing = ((imgScroll - 400) * 2 * pathLength) / imgHeight;
 				}
 				
 				pathDrawing = pathDrawing > pathLength ? pathLength : pathDrawing;

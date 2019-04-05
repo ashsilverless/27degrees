@@ -62,7 +62,11 @@ get_header();?>
     <div class="safari-block">
 
         <?php if( have_rows('safari_safari') ): 
-        while ( have_rows('safari_safari') ) : the_row(); ?>   
+	        
+	    $total = count(get_field('safari_safari'));
+	    $count = 0;
+	    
+        while ( have_rows('safari_safari') ) : the_row(); $count++ ?>   
     
     </div><!--r-->
     </div><!--c-->
@@ -75,7 +79,14 @@ get_header();?>
                 
             <div class="row pb5 text-block pt3">
                 
-                <?php set_query_var('path', 1); get_template_part('template-parts/path-image');?>
+                <?php 
+	                if($count == $total)
+	                	$count = 10;
+	                	
+	                set_query_var('path', $count);
+	                
+	                get_template_part('template-parts/path-image');
+	            ?>
                 
                 <div class="col-6">
             
