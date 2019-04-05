@@ -30,7 +30,9 @@ get_header();?>
 
 <!-- ******************* Text Block ******************* -->
 
-<div class="text-block mt5 mb5">
+<div class="text-block pt5 pb5">
+	
+	<?php set_query_var('path', 0); get_template_part('template-parts/path-image');?>
 
     <div class="row">
 
@@ -232,7 +234,7 @@ get_header();?>
 <!-- ******************* Text 3 Block ******************* -->
 <div class="text-block pt5 pb5">
 	
-	<?php set_query_var('path', 3); get_template_part('template-parts/path-image');?>
+	<?php set_query_var('path', 10); get_template_part('template-parts/path-image');?>
 
     <div class="row">
 

@@ -201,53 +201,80 @@ jQuery(document).ready(function( $ ) {
 			path.attr("path-length", length);
 	    });
 	    
+	    $(".path-wrapper svg:first").addClass("first");
+	    
 	    $(document).scroll(function() {
-			$(".path-wrapper svg path").each(function() {
-			    var path      = $(this);
-			    var length    = path.attr("path-length");
-			    var svgHeight = path.parent().outerHeight();
-			    var objectBot = path.offset().top + svgHeight + 50;
-				var windowBot = $(window).scrollTop() + $(window).height();
-					
-				if((objectBot - 100) < windowBot) {
-					// Path drawing
-					
-				    var scroll = (windowBot - objectBot) / windowBot;
-				    var draw   = length - (length * scroll * 5);
-						draw   = draw < 0 ? 0 : draw;
-						draw   = draw > length ? length : draw;
-				    path.css("stroke-dashoffset", draw);
-				    
-				    // Circle drawing
-				    
-				    var scrollC  = (windowBot - objectBot);
-				    var middle   = svgHeight / 2;
-				    var middle_l = middle - 20;
-				    var middle_h = middle + 20;
-				    
-				    //var drawCircle = svgHeight - (svgHeight * scrollC * 5);
-				    //var drawCircle = middle_h - scrollC;
-					//	drawCircle = drawCircle < 0 ? 0 : drawCircle;
-					//	drawCircle = drawCircle > svgHeight ? svgHeight : drawCircle;
-				    
-				    var circle = path.parent().find("circle");
-/*
-					var scale  = middle_h - scrollC;
-					    scale  = drawCircle > middle_h ? 0  : scale;
-					    scale  = drawCircle < middle_l ? 40 : scale;
-					    scale  = scale / 40;
-*/
-					var scale  = middle_h - scrollC;
-					    scale  = scale > 40 ? 40 : scale;
-					    scale  = scale < 0  ? 0  : scale;
-					    scale  = 1 - (scale / 40);
-					
-					var radio  = circle.attr("original-radio") * scale;
-					circle.attr("r", radio);
+			$(".path-wrapper svg").each(function() {
+				var svgImage   = $(this);
+			    var path       = svgImage.find("path");
+			    var pathLength = path.attr("path-length");
+			    var circle     = svgImage.find("circle#mark");
+				var circleAux  = svgImage.find("circle#aux");
+			    
+			    var windowScroll = $(window).scrollTop() + $(window).height();
+			    var imageScroll  = svgImage.offset().top + $(window).height() / 2;
+	
+				// Path drawing
+				var imgScroll = windowScroll - imageScroll; // Total scroll of the div
+				var imgHeight = svgImage.height();
+				
+				var pathDrawing = (imgScroll * pathLength) / imgHeight; // Equivalent path drawing to the scroll
+				
+				if(svgImage.hasClass("first")) {
+					pathDrawing *= 2;
 				}
+				
+				pathDrawing = pathDrawing > pathLength ? pathLength : pathDrawing;
+				pathDrawing = pathDrawing < 0 ? 0 : pathDrawing;
+				pathDrawing = pathLength - pathDrawing;
+				
+				path.css("stroke-dashoffset", pathDrawing);
+				
+				// Circle drawing
+				var point = path.get(0).getPointAtLength(pathLength - pathDrawing);
+				var intersection = checkIntersection(point, circleAux);
+				
+				var animationGrow   = svgImage.find("animate#grow");
+				var animationReduce = svgImage.find("animate#reduce");
+				
+				var oldScroll = circle.attr("scroll");
+				var newScroll = $(window).scrollTop();
+				
+				if(intersection && oldScroll) {
+					if(newScroll < oldScroll && animationReduce.attr("triggered") == 0) {
+						animationReduce.get(0).beginElement();
+						animationReduce.attr("triggered", 1);
+						animationGrow.attr("triggered", 0);
+					} else if(newScroll > oldScroll && animationGrow.attr("triggered") == 0) {
+						animationGrow.get(0).beginElement();
+						animationGrow.attr("triggered", 1);
+						animationReduce.attr("triggered", 0);
+					}
+				}
+				
+				if(!intersection) {
+					if(point.y < circle.attr("cy")) {
+						circle.attr("r", 20);
+						animationReduce.attr("triggered", 0);
+						animationGrow.attr("triggered", 1);
+					} else if(point.y > circle.attr("cy")) {
+						circle.attr("r", 0);
+						animationReduce.attr("triggered", 1);
+						animationGrow.attr("triggered", 0);
+					}
+				}
+				circle.attr("scroll", newScroll);
+
 			});
 		});
 	});
+	
+	function checkIntersection(point, circle) {
+		var center_x = circle.attr("cx");
+		var center_y = circle.attr("cy");
+		var radius   = circle.get(0).getBoundingClientRect().width / 2;
+		return Math.pow((point.x - center_x), 2) + Math.pow((point.y - center_y), 2) < Math.pow(radius,2);
+	}
 
 
 // ========== Controller for lightbox elements
