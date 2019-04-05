@@ -293,12 +293,13 @@ get_header();?>
 
         <?php if( have_rows('accm_content') ): 
         while ( have_rows('accm_content') ) : the_row(); ?>   
+        
+        <h2 class="heading heading__sm mb1"><?php the_sub_field('heading');?></h2>
+        
         <div class="row mb3">
         
             <div class="col-6">
     
-        <h2 class="heading heading__md mb1"><?php the_sub_field('heading');?></h2>
-               
             <div class="expanding-copy <?php the_sub_field( 'text_type' );?> <?php the_sub_field( 'dev_class' );?>">
             
                 <div class="expanding-copy__lead">

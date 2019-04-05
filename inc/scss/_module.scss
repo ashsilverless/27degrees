@@ -332,9 +332,11 @@
 
 .accom-block .gallery {
     grid-template-columns: 1fr;
+    margin-bottom: 0;
     
     a {
         grid-area:auto;
+        min-height: 10em;
     }
 }
 
