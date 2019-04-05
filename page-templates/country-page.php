@@ -47,7 +47,7 @@ get_header();?>
 
             <?php $countryImage = get_field('country_image'); ?>
         
-            <div class="country-image" style="background-image: url(<?php echo $countryImage['url']; ?>); " ?></div>
+            <div class="country-image slow-fade" style="background-image: url(<?php echo $countryImage['url']; ?>); " ?></div>
     
         </div>
         

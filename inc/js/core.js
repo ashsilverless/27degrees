@@ -459,7 +459,13 @@ $(window).on('resize scroll', function() {
     if ($(this).isInViewport()) {
       $(this).addClass('active');    
     } 
+  });  
+    $('.slow-fade').each(function() {
+    if ($(this).isInViewport()) {
+      $(this).addClass('active');    
+    } 
   });    
+    
 });
 
 });//Don't remove ---- end of jQuery wrapper
