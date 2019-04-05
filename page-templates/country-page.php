@@ -42,8 +42,13 @@ get_header();?>
             
         </div>
 
-        <div class="col-sm-6">
         
+        <div class="col-6">
+
+            <?php $countryImage = get_field('country_image'); ?>
+        
+            <div class="country-image" style="background-image: url(<?php echo $countryImage['url']; ?>); " ?>
+    
         </div>
         
     </div><!--r-->
@@ -76,9 +81,9 @@ get_header();?>
                         <span><?php the_sub_field('sub_heading');?></span>
                     </h2>
                                       
-                    <p><?php the_sub_field( 'text' );?></p>
+                    <?php the_sub_field( 'text' );?>
         
-                    <h4 class="heading heading__sm mb1">Experience Level</h2>            
+                    <h4 class="heading heading__sm mt2 mb1">Experience Level</h2>            
                     
                     <div class="experience-level <?php the_sub_field('experience_level');?> mt2 mb2">
                         <span></span>
