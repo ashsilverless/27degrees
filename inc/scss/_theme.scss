@@ -10,7 +10,8 @@
     margin-bottom: 2em;
     transform: translateY(-30px);
     
-    img {
+    svg {
+	    fill: #FFFFFF;
         width:300px;
     }
 }
@@ -27,16 +28,18 @@
 }
 
 .small-logo {
-    @include backgroundContain;
     position: absolute;
-    height: 23px;
-    width: 50px;
-    top: -2.5em;
-    opacity:0;
-    transition: opacity 0.5s 0.5s ease;
+    top: -2.7em;
+        
+    svg {
+	    transition: opacity 0.5s 0.5s ease;
+	    opacity:0;
+		height: 23px;
+		width: 50px;
+    }
 }
 
-.scrolled .small-logo {
+.scrolled .small-logo svg {
     opacity: 1;
 }
 /*===========BODY==========*/
