@@ -36,13 +36,10 @@
     		<nav id="nav">
 
 	    		<div class="nav-menu">
- 						
-                    <?php $mainLogo = get_field('logo', 'options');?>
-                    
                     
                     <div class="nav-menu__logo">
                         <a href="<?php echo get_home_url(); ?>">
-                            <img src="<?php echo $mainLogo['url'];?>"/>
+                            <?php get_template_part('inc/img/27-degrees-logo');?>
                         </a>
                     </div>        
                     
@@ -74,9 +71,10 @@
 					<div class="menu-trigger">
 						
 						<div class="close-text">Close</div>
-						
-						<?php $smallSiteLogo = get_field('small_logo', 'options');?>
-						<div class="small-logo" style="background-image: url(<?php echo $smallSiteLogo['url']; ?>);"></div>
+
+						<div class="small-logo">
+							<?php get_template_part('inc/img/27-degrees-icon', 'logo');?>
+						</div>
 						
 						<div class="menu-circle mb1"></div>
 						
