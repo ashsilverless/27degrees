@@ -37,9 +37,11 @@
 </div>
 
 <?php if( get_field('logo_accent') == 'true' ): ?>
-
-<?php $accentLogo = get_field('small_logo', 'options');?>
-
-    <div class="text-block__accent" style="background-image: url(<?php echo $accentLogo['url']; ?>);"></div>
+    
+    <div class="text-block__accent">
+	    
+	    <?php get_template_part('inc/img/27-degrees-icon', 'logo');?>
+	    
+    </div>
 
 <?php endif;?>

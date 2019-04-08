@@ -17,9 +17,9 @@
 		
 				    <div class="hero__home__content">
 					    
-			            <?php $logo = get_field('logo', 'option'); ?>
-			            
-						<img class="logo-hero" src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt'] ?>"/>
+					    <div class="logo-hero">
+					    	<?php get_template_part('inc/img/27-degrees-logo');?>
+					    </div>
 						
 			        </div>
 			        

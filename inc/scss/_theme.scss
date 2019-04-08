@@ -185,7 +185,6 @@
     position: relative;
     
     &__accent {
-        @include backgroundContain;
         position: absolute;
         width: 10em;
         height: 10em;
