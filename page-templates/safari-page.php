@@ -68,7 +68,7 @@ get_header();?>
             
                 <div class="expanding-copy__lead">
                 
-                    <p><?php the_field( 'overview_text_block_text' );?></p>
+                    <?php the_field( 'overview_text_block_text' );?>
                 
                 </div>
                 
@@ -112,7 +112,7 @@ get_header();?>
                 
                 <?php while ( have_rows('overview_text_block_supporting_list') ) : the_row(); ?>
     
-                    <li><?php the_sub_field( 'list_item' );?></li> 
+                    <li class="<?php the_sub_field( 'bold' );?>"><?php the_sub_field( 'list_item' );?></li> 
     
                 <?php endwhile;?>
             
@@ -121,6 +121,18 @@ get_header();?>
         <?php endif;?>
             
         <?php endif; ?>
+
+        <?php if( get_field('overview_text_block_experience_level') ): ?>
+
+            <h4 class="heading heading__sm mt2 mb1">Experience Level</h2>            
+                    
+            <div class="experience-level <?php the_field('overview_text_block_experience_level');?> mt2 mb2">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+        <?php endif; ?>        
         
         </div>
         
