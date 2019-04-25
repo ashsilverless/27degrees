@@ -358,7 +358,7 @@ get_header();?>
         
                     <?php foreach( $images as $image ): ?>
         
-                    <a href="<?php echo $image['url']; ?>" class="lightbox-gallery"  alt="<?php echo $image['alt']; ?>" style="background-image: url(<?php echo $image['url']; ?>);"><!--<?php echo $image['caption']; ?>--></a>
+                    <a href="<?php echo $image['url']; ?>" class="lightbox-gallery mb1"  alt="<?php echo $image['alt']; ?>" style="background-image: url(<?php echo $image['url']; ?>);"><!--<?php echo $image['caption']; ?>--></a>
         
                     <?php endforeach; ?>
         
