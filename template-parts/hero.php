@@ -17,9 +17,9 @@
 		
 				    <div class="hero__home__content">
 					    
-			            <?php $logo = get_field('logo', 'option'); ?>
-			            
-						<img class="logo-hero" src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt'] ?>"/>
+					    <div class="logo-hero">
+					    	<?php get_template_part('inc/img/27-degrees-logo');?>
+					    </div>
 						
 			        </div>
 			        
@@ -58,15 +58,13 @@
 		
 		    <div class="hero <?php the_field( 'hero_height' );?>" style="background-image: url(<?php echo $heroImage['url']; ?>); background-color: <?php echo $heroColor; ?>;">
 		                
-		    <div class="hero__content">       
-		
-		        <?php $siteLogo = get_field('logo', 'options');?>
+		    <div class="hero__content">
 		        
 		        <div class="site-logo">
 		            
 		            <a href="<?php echo get_home_url(); ?>">
 		                
-		                <img src="<?php echo $siteLogo['url'];?>"/>
+		                <?php get_template_part('inc/img/27-degrees-logo');?>
 		            
 		            </a>
 		        

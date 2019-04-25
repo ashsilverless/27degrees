@@ -94,9 +94,11 @@ get_header();?>
             
             <?php if( get_field('overview_logo_accent') == 'true' ): ?>
             
-            <?php $accentLogo = get_field('small_logo', 'options');?>
-            
-                <div class="text-block__accent" style="background-image: url(<?php echo $accentLogo['url']; ?>);"></div>
+                <div class="text-block__accent">
+	                
+	                <?php get_template_part('inc/img/27-degrees-icon', 'logo');?>
+	                
+                </div>
             
             <?php endif;?>
             
@@ -187,10 +189,12 @@ get_header();?>
             
             <?php if( get_field('riding_logo_accent') == 'true' ): ?>
             
-            <?php $accentLogo = get_field('small_logo', 'options');?>
-            
-                <div class="text-block__accent" style="background-image: url(<?php echo $accentLogo['url']; ?>);"></div>
-            
+                <div class="text-block__accent">
+	                
+	                <?php get_template_part('inc/img/27-degrees-icon', 'logo');?>
+	                
+                </div>
+                            
             <?php endif;?>
             
         </div>
@@ -267,9 +271,11 @@ get_header();?>
             
             <?php if( get_field('accom_logo_accent') == 'true' ): ?>
             
-            <?php $accentLogo = get_field('small_logo', 'options');?>
-            
-                <div class="text-block__accent" style="background-image: url(<?php echo $accentLogo['url']; ?>);"></div>
+            	<div class="text-block__accent">
+	            	
+	                <?php get_template_part('inc/img/27-degrees-icon', 'logo');?>
+	                
+                </div>
             
             <?php endif;?>
             
@@ -428,9 +434,11 @@ get_header();?>
             
             <?php if( get_field('loc_logo_accent') == 'true' ): ?>
             
-            <?php $accentLogo = get_field('small_logo', 'options');?>
-            
-                <div class="text-block__accent" style="background-image: url(<?php echo $accentLogo['url']; ?>);"></div>
+            	<div class="text-block__accent">
+	            	
+	                <?php get_template_part('inc/img/27-degrees-icon', 'logo');?>
+	                
+                </div>
             
             <?php endif;?>
             

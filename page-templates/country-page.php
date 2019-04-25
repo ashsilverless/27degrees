@@ -76,9 +76,9 @@ get_header();?>
         <div class="fullwidth-image" style="background-image: url(<?php echo $fullwidthImage['url']; ?>);"></div>
 
         <div class="container"> 
-                
+
             <div class="row pb5 text-block pt3">
-                
+
                 <?php 
 	                if($count == $total)
 	                	$count = 10;
@@ -87,13 +87,19 @@ get_header();?>
 	                
 	                get_template_part('template-parts/path-image');
 	            ?>
+
+            <div class="col-12">
                 
-                <div class="col-6">
+                <h2 class="heading heading__md mb1"><?php the_sub_field('heading');?>
+                    
+                    <span><?php the_sub_field('sub_heading');?></span>
+                
+                </h2>
             
-                    <h2 class="heading heading__md mb1"><?php the_sub_field('heading');?>
-                        <span><?php the_sub_field('sub_heading');?></span>
-                    </h2>
-                                      
+            </div>
+
+                <div class="col-6">
+                             
                     <?php the_sub_field( 'text' );?>
         
                     <h4 class="heading heading__sm mt2 mb1">Experience Level</h2>            

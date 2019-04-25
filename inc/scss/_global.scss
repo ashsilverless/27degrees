@@ -257,6 +257,14 @@ nav {
         &:hover + .mainMenu + .social {
             opacity:0.2;
         }
+        
+        a {
+	        width: 100%;
+	        
+	        svg {
+		        fill: #FFFFFF;
+	        }
+        }
     }
     
     ul {
