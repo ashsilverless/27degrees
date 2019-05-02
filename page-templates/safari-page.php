@@ -46,6 +46,7 @@ get_header();?>
         <li class="tablink" onclick="openPage('accom')">Accommodation</li>
         <li class="tablink" onclick="openPage('gallery')">Gallery</li>
         <li class="tablink" onclick="openPage('location')">Location</li>
+        <li class="tablink" onclick="openPage('itinerary')">Itinerary</li>
     </ul>
 </div>
 <!-- ******************* Tab Controls END ******************* -->
@@ -491,6 +492,80 @@ get_header();?>
 </div>
 
 <!-- ******************* Location Tab END ******************* -->
+
+<!-- ******************* Itinerary Tab ******************* -->
+
+<div id="itinerary" class="itinerary-tab tabcontent">
+
+<div class="container">
+    
+    <div class="row">
+
+    <div class="text-block mb5">
+
+    <h2 class="heading heading__md mb1"><?php the_field('itin_text_block_heading');?></h2>
+
+    <div class="row">
+
+        <div class="col-6">
+                        
+            <div class="expanding-copy <?php the_sub_field( 'text_type' );?> <?php the_sub_field( 'dev_class' );?>">
+            
+                <div class="expanding-copy__lead">
+                
+                    <p><?php the_field( 'itin_text_block_text' );?></p>
+                
+                </div>
+                
+                <?php if( get_field('itin_text_block_text_more') ): ?>
+                
+                    <a class="trigger-expand">Read More</a>    
+                
+                <?php endif; ?>
+                
+                <div class="expanding-copy__more">
+                
+                    <?php the_field('itin_text_block_text_more'); ?>          
+                
+                </div>    
+                
+                <?php if( get_field('itin_text_block_text_more') ): ?>
+                
+                    <a class="trigger-collapse hide">Read Less</a>    
+                
+                <?php endif; ?>
+                
+            </div>
+            
+            <?php if( get_field('itin_logo_accent') == 'true' ): ?>
+            
+            	<div class="text-block__accent">
+	            	
+	                <?php get_template_part('inc/img/27-degrees-icon', 'logo');?>
+	                
+                </div>
+            
+            <?php endif;?>
+            
+        </div>
+
+        <div class="col-sm-5 offset-sm-1">
+
+        <?php get_template_part('template-parts/toggle');?>
+        
+        </div>
+        
+    </div><!--r-->
+
+    </div>
+
+</div><!--r-->
+
+</div><!--c-->
+
+</div><!--tabcontent-->
+
+<!-- ******************* Itinerary Tab END ******************* -->
 
 </div><!--wrap all tab content to enable sub menu to remain sticky-->
 
