@@ -131,36 +131,41 @@ a.next-section {
     transform: translateX(-50%);
     left: 50%;
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 20px;
     color: white;
     z-index: 150;
     filter: drop-shadow(2px 2px 4px #000000);
     width: 100%;
     text-align: center;
-    opacity: 0.9;
+    opacity: 0;
     color: #cfdfef;
+    transition: all 5s ease;
     
     i {
 	    position: absolute;
-	    @include circle(1.8em, 0.15em solid #cfdfef);
+	    @include circle(1.8em, 0.15em solid white);
 	    color: #cfdfef;
 	    left: 50%;
 	    bottom: 0;
         transform: translateX(-50%);
 		margin-bottom: 0.8em;
-		transition: background-color 0.3s ease;
+		transition: color 0.3s ease;
 		text-align: center;
 		padding-left: 0.25em;
 		line-height: 1.6em;
 		opacity: 0.9;
-		background-color: hsla(0, 0%, 0%, 0.5);
 		
 		&:hover {
-			background-color: rgba(255, 255, 255, 0.3);
+			color:white;
 	    }
     }
     
 }
+
+.loaded a.next-section {
+    letter-spacing: 8px;
+    opacity: 1;
+    }
 
 .scroll-section {
 	width: calc(100vw - #{$width-menu});

@@ -34,6 +34,10 @@
 	    min-height: 200vh;
 	    height: auto;
 	    
+	    &:before {
+    	    opacity:0;
+	    }
+	    
 	    &__content {
 		    position: relative;
 		    width: 100%;
@@ -61,7 +65,7 @@
 	        
 	        svg {
 		        fill: #FFFFFF;
-		        filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.88));
+                filter: drop-shadow(0 0 80px rgba(0, 0, 0, 0.48)) drop-shadow(0 0 4px rgba(0, 0, 0, 0.8));
 				width: 30em;
 				min-width: 40vw;
 				opacity: 0;
