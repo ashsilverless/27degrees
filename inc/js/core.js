@@ -387,8 +387,12 @@ jQuery(document).ready(function( $ ) {
     });
 
     $(".toggle").click(function() {   
-      	$('.toggle.active').removeClass("active"); 
-        $(this).addClass("active");   
+        $(".toggle.active").removeClass("active"); 
+        $(this).addClass("active");         
+    });
+
+    $(".toggle.active").click(function() {   
+      	$(this).removeClass("active"); 
     });
 
     $(".tablink").click(function() {   

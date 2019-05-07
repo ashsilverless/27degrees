@@ -507,7 +507,7 @@ get_header();?>
 
     <div class="row">
 
-        <div class="col-6">
+        <div class="col-4">
                         
             <div class="expanding-copy <?php the_sub_field( 'text_type' );?> <?php the_sub_field( 'dev_class' );?>">
             
@@ -549,7 +549,7 @@ get_header();?>
             
         </div>
 
-        <div class="col-sm-5 offset-sm-1">
+        <div class="col-sm-7 offset-sm-1">
 
         <?php get_template_part('template-parts/toggle');?>
         
