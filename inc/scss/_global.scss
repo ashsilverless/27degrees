@@ -417,6 +417,13 @@ footer {
     p {
         display: inline-block;
         font-weight: 300;
+        margin-bottom: 0;
+    }
+    
+    p.trading {
+        font-size: 0.75em;
+        line-height: 1em;
+        margin: 0;
     }
     
     a {

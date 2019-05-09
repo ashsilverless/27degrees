@@ -46,7 +46,7 @@
     
                         <a href="">Privacy</a></p>
 
-  <div class="logo-holder">
+                        <div class="logo-holder">
                             
                             <a href="https://silverless.co.uk">
                                 
@@ -55,6 +55,8 @@
                             </a>
                         
                         </div>
+    
+                        <p class="trading">27 Degrees South is a trading name of Mark Rampton Ltd</p>
     
                     </div>
     
