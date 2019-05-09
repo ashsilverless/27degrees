@@ -56,7 +56,7 @@
                         
                         </div>
     
-                        <p class="trading">27 Degrees South is a trading name of Mark Rampton Ltd</p>
+                        <p class="trading">27 Degrees South is a trading name of Mark Rampton Ltd</p> 
     
                     </div>
     
