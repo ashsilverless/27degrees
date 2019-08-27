@@ -1,4 +1,9 @@
 <?php
+	
+$cta_block = get_field('cta_block_cta');
+
+if($cta_block) {
+	
 if( in_array( 'locations', get_field('cta_block_cta') ) ) {
 ?>   
 
@@ -74,5 +79,6 @@ if( in_array( 'enquire', get_field('cta_block_cta') ) ) {
 </div>
 
 <?php
+}
 }
 ?>

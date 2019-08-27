@@ -34,7 +34,7 @@ get_header();?>
 
     <div class="row">
 
-        <div class="col-6">
+        <div class="col-12 col-xs-6">
             
             <h2 class="heading heading__md mb1"><?php the_field('text_block_heading');?></h2>
             

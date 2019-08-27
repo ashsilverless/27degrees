@@ -8,7 +8,7 @@
             
             $leaderImage = get_sub_field('image');?>
 
-            <div class="col-4">
+            <div class="col-12 col-sm-6 col-md-4">
             
                 <a href="<?php the_sub_field( 'target' );?>">                
                     

@@ -34,7 +34,7 @@ get_header();?>
 
     <div class="row">
 
-        <div class="col-sm-6">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
             
             <h2 class="heading heading__md mb1"><?php the_field('text_block_heading');?></h2>
             
@@ -42,7 +42,7 @@ get_header();?>
             
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
         
         </div>
         
@@ -63,7 +63,7 @@ get_header();?>
 
     <div class="row">
 
-        <div class="col-sm-6">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
 
             <h2 class="heading heading__md mb1 slide-up"><?php the_field('text_block2_text_block_heading');?></h2>
             
@@ -117,7 +117,7 @@ get_header();?>
         
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
         
         </div>
         
@@ -131,7 +131,7 @@ get_header();?>
 
 <div class="row mb5">
 
-    <div class="col-sm-6">
+    <div class="col-12 col-sm-10 col-md-8 col-lg-6">
 
         <?php get_template_part('template-parts/toggle');?>
 
@@ -158,7 +158,7 @@ get_header();?>
 
     <div class="row">
 
-        <div class="col-sm-6">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
 
             <h2 class="heading heading__md mb1 slide-up"><?php the_field('text_block3_text_block_heading');?></h2>
             
