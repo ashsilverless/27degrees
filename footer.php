@@ -25,7 +25,7 @@
     
                     </div>
     
-                    <div class="col-10 col-xs-4 accreds">
+                    <div class="col-12 col-sm-4 accreds">
 
 
                     <?php 
@@ -38,13 +38,13 @@
 
                     </div>
     
-                    <div class="col-12 col-xs-6 socket__colophon">
+                    <div class="col-12 col-sm-6 socket__colophon">
     
                         <p>&copy; 27 Degrees South <?php echo date ('Y');?>
     
-                        <a href="">Terms</a>
+                        <a href="/terms-conditions">Terms</a>
     
-                        <a href="">Privacy</a></p>
+                        <a href="/privacy-policy">Privacy</a></p>
 
                         <div class="logo-holder">
                             

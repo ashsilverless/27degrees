@@ -1,10 +1,12 @@
 <?php
 /**
- * Template Name: Countries
+ * Template Name: Terms and Privacy
  *
  * @package Silverless
  */
-get_header();?>
+get_header();
+
+if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <!-- ******************* Hero Content ******************* -->
 
@@ -30,33 +32,24 @@ get_header();?>
 
 <!-- ******************* Text Block ******************* -->
 
-<div class="text-block mt5 mb5">
+<div class="text-block pt5 pb5">
 
     <div class="row">
 
-        <div class="col-12 col-sm-6">
+        <div class="col-12">
             
-            <h2 class="heading heading__md mb1"><?php the_field('text_block_heading');?></h2>
-            
-            <?php get_template_part('template-parts/text', 'block');?>
+            <?php the_content($post->ID);?>
             
         </div>
 
-        <div class="col-6">
         
+        <div class="col-6">
+    
         </div>
         
     </div><!--r-->
 
 </div>
-
-<!-- ******************* Text Block END ******************* -->
-
-<!-- ******************* Leaders Block ******************* -->
-
-<?php get_template_part('template-parts/leaders');?>
-
-<!-- ******************* Leaders END ******************* -->
 
 <!-- ******************* CTA Block ******************* -->
 </div><!--c-->
@@ -64,7 +57,8 @@ get_header();?>
 
 <!-- ******************* CTA END ******************* -->
 
-
 </div><!--c-->
+
+<?php endwhile; endif; ?>	
 
 <?php get_footer();?>
