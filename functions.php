@@ -5,20 +5,20 @@
  * @package Silverless
  */
 
-/** = Ditch Junk = */ 
+/** = Ditch Junk = */
 
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 
 remove_action('wp_print_styles', 'print_emoji_styles');
 
-/** = Enqueue scripts and styles = */ 
+/** = Enqueue scripts and styles = */
 
 function silverless_scripts() {
-	
+
 	wp_enqueue_style( 'silverless-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'silverless-core-js', get_template_directory_uri() . '/inc/js/compiled.js', array('jquery'), true); 
-	
+	wp_enqueue_script( 'silverless-core-js', get_template_directory_uri() . '/inc/js/compiled.js', array('jquery'), true);
+
 }
 
 add_action( 'wp_enqueue_scripts', 'silverless_scripts' );
@@ -38,10 +38,10 @@ add_action( 'init', 'sl_custom_menu' );
 /* Dashboard Config */
 
 add_action('wp_dashboard_setup', 'sl_dashboard_widget');
-  
+
 function sl_dashboard_widget() {
 global $wp_meta_boxes;
- 
+
 wp_add_dashboard_widget('custom_help_widget', 'Silverless Support', 'custom_dashboard_help');
 }
 function custom_dashboard_help() {
@@ -112,9 +112,9 @@ function my_custom_fonts() {
 .acf-fields>.acf-tab-wrap .acf-tab-group li.active a {
   background: hsl(283, 14%, 20%);
   font-size: 12px;
-  color: hsl(0, 0%, 100%);    
+  color: hsl(0, 0%, 100%);
     }
-    
+
 .acf-field.group-fields {
     background: #352b3a;
     color: white;
@@ -131,15 +131,19 @@ function my_custom_fonts() {
 	display: none;
 }
 
+.white-text .acf-radio-list.acf-hl li {
+	color:white;
+}
+
 </style>';
 }
 
 /**
  * ACF Options Pages.
  */
- 
+
  if( function_exists('acf_add_options_page') ) {
-	
+
 	acf_add_options_page(array(
 		'page_title' 	=> 'Theme Settings',
 		'menu_title'	=> 'Theme Settings',
@@ -147,7 +151,7 @@ function my_custom_fonts() {
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false
 	));
-	
+
 	/*acf_add_options_sub_page(array(
 		'page_title' 	=> 'Header Settings',
 		'menu_title'	=> 'Header',
@@ -160,15 +164,15 @@ function my_custom_fonts() {
 		'menu_slug' 	=> 'call-to-action',
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false
-	));	
+	));
 }
- 
+
 /**= Remove Default Menu Items =**/
- 
+
 function remove_menus(){
 
   remove_menu_page( 'edit-comments.php' );          //Comments
-  
+
 }
 add_action( 'admin_menu', 'remove_menus' );
 
@@ -244,7 +248,7 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 /**= WooCommerce - Custom Customer Message in Checkout =**/
 
-function md_custom_woocommerce_checkout_fields( $fields ) 
+function md_custom_woocommerce_checkout_fields( $fields )
 {
     $fields['order']['order_comments']['placeholder'] = 'Pop any info you need us to know in here, please';
 
@@ -257,31 +261,31 @@ add_filter( 'woocommerce_checkout_fields', 'md_custom_woocommerce_checkout_field
 function silverless_social_sharing_buttons($content) {
 	global $post;
 	if(is_singular() || is_home()){
-	
-		// Get current page URL 
+
+		// Get current page URL
 		$silverlessURL = urlencode(get_permalink());
- 
+
 		// Get current page title
 		$silverlessTitle = htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');
 		// $silverlessTitle = str_replace( ' ', '%20', get_the_title());
-		
+
 		// Get Post Thumbnail for pinterest
 		$silverlessThumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
- 
+
 		// Construct sharing URL without using any script
 		$twitterURL = 'https://twitter.com/intent/tweet?text='.$silverlessTitle.'&amp;url='.$silverlessURL.'&amp;via=Crunchify';
 		$facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$silverlessURL;
- 
+
 		// Based on popular demand added Pinterest too
 		$pinterestURL = 'https://pinterest.com/pin/create/button/?url='.$silverlessURL.'&amp;media='.$silverlessThumbnail[0].'&amp;description='.$silverlessTitle;
- 
+
 		// Add sharing button at the end of page/page content
 		$content .= '<!-- Implement your own superfast social sharing buttons without any JavaScript loading. No plugin required. Detailed steps here: http://crunchify.me/1VIxAsz -->';
 		$content .= '<div class="contactSocials"><h5 class="heading heading__sm">SHARE </h5>';
 		$content .= ' <a href="'. $twitterURL .'" target="_blank"><i class="fab fa-twitter"></i></a>';
 		$content .= '<a href="'.$facebookURL.'" target="_blank"><i class="fab fa-facebook-square"></i></a>';
 		$content .= '</div>';
-		
+
 		return $content;
 	}else{
 		// if not a post/page then don't include sharing button
@@ -295,34 +299,34 @@ function silverless_social_sharing_buttons($content) {
 add_filter('wp_nav_menu_items', 'my_wp_nav_menu_items', 10, 2);
 
 function my_wp_nav_menu_items($items,$args) {
-	
+
 	$menu = wp_get_nav_menu_object($args->menu);
-	
+
 	if($args->theme_location=='main-menu') {
 		$logo     = get_field('logo', 'option');
 		$title    = get_field('title_company', $menu);
 		$subtitle = get_field('subtitle_company', $menu);
-		
+
 		$html_logo = '<li class="menu-item-logo pb5"><a href="'.home_url().'"><img src="'.$logo['url'].'" alt="'.$logo['alt'].'" /></a></li>';
-		
+
 		$social_icons = '<li class="menu-item-social-items pt5">';
 
-		
+
 		if(have_rows('social_links', 'option')) {
 			while(have_rows('social_links', 'option')) {
 				the_row();
 				$row = get_row();
-				
+
 				$social_icon = "<a href='".get_sub_field('page_link')."'><i class='fab fa-".get_sub_field('name')."'></i></a>";
-				
+
 				$social_icons .= $social_icon;
 			}
 		}
 		$social_icons .= "</li>";
-		
+
 		$items = $html_logo . $items . $social_icons;
 	}
-	
+
 	return $items;
 }
 **/
