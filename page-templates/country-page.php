@@ -98,7 +98,7 @@ get_header();?>
             
             </div>
 
-                <div class="col-6">
+                <div class="col-12 col-sm-6">
                              
                     <?php the_sub_field( 'text' );?>
         

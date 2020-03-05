@@ -114,6 +114,22 @@ function my_custom_fonts() {
   font-size: 12px;
   color: hsl(0, 0%, 100%);    
     }
+    
+.acf-field.group-fields {
+    background: #352b3a;
+    color: white;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    padding: 10px 12px;
+}
+
+.acf-field.group-fields .acf-label, .acf-field.group-fields .acf-label label {
+	margin: 0;
+}
+
+.acf-field.group-fields .acf-input {
+	display: none;
+}
 
 </style>';
 }
@@ -137,14 +153,6 @@ function my_custom_fonts() {
 		'menu_title'	=> 'Header',
 		'parent_slug'	=> 'site-general-settings',
 	));*/
-
-	acf_add_options_page(array(
-		'page_title' 	=> 'Testimonials',
-		'menu_title'	=> 'Testimonials',
-		'menu_slug' 	=> 'testimonials',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> false
-	));
 
 	acf_add_options_page(array(
 		'page_title' 	=> 'Call To Action',
@@ -482,5 +490,21 @@ class ACF_Field_Nav_Menu_V5 extends acf_field {
 new ACF_Field_Nav_Menu_V5();
 
 
+// Remove posts from Wordpress
+add_action( 'admin_menu', 'remove_default_post_type' );
 
+function remove_default_post_type() {
+    remove_menu_page( 'edit.php' );
+}
 
+function mytheme_admin_bar_render() {
+	global $wp_admin_bar;
+	$wp_admin_bar->remove_menu('new-content');
+}
+add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
+
+add_action( 'wp_dashboard_setup', 'remove_draft_widget', 999 );
+
+function remove_draft_widget(){
+    remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+}

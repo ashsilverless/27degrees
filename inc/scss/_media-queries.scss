@@ -149,6 +149,10 @@ body {
   height: 50vh;
 }
 
+.heading__xl {
+	letter-spacing: 0.3em;
+}
+
 /*---CONTENT---*/
   
 /*---FOOTER---*/
@@ -200,6 +204,16 @@ body .hamburger-inner span {
     font-size: 3em;
 }
 
+.nav-menu ul li {
+	font-size: 0.85em;
+}
+
+.heading__xl {
+	letter-spacing: 0.3em;
+	font-size: 3em;
+	margin-top: 3em;
+}
+
 /*---CONTENT---*/
 
 #kglogo {
@@ -220,9 +234,63 @@ body .hamburger-inner span {
   grid-template-rows: auto auto;
 }
 
+.heading__spaced {
+	letter-spacing: 0.4em;
+}
 
+.loaded a.next-section {
+	letter-spacing: 6px;
+}
+
+a.next-section {
+	font-size: 1.2em;
+}
+
+p {
+	font-size: 1.2em;
+}
+
+.path-wrapper {
+	display: none;
+}
+
+.sub-menu > ul {
+	text-align: center;
+}
+
+.sub-menu li {
+	margin-right: 2em;
+	
+	&:after {
+		padding: 0 1em;
+	}
+}
 
 /*---FOOTER---*/
+
+.socket {
+	
+	.socials {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.accreds {
+		display: flex;
+		margin-bottom: 1em;
+		margin-top: 1em;
+		text-align: center;
+		justify-content: center;
+	}
+	
+	.socket__colophon {
+		text-align: center;
+		
+		.logo-holder {
+			margin-right: 1em;
+		}
+	}
+}
   
 }/*---end extra small mq---*/
 
